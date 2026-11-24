@@ -1,0 +1,713 @@
+
+/* Página de cursos */
+
+.more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
+:root {
+    --purple: #6428d7;
+    --purple-dark: #4e16b8;
+    --purple-light: #f2edff;
+    --ink: #282344;
+    --muted: #6e6a7d;
+    --yellow: #ffdf00;
+    --line: #e9e4f5;
+    --shadow: 0 7px 22px rgba(67, 35, 137, .10);
+}
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 28px;
+    font-family: "Poppins", sans-serif;
+    color: var(--ink);
+
+    background: linear-gradient(
+        135deg,
+        #f8f6ff 0%,
+        #fff 55%,
+        #fffdf0 100%
+    );
+}
+
+/* CONTAINER PRINCIPAL */
+.page {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e8e2f2;
+    border-radius: 18px;
+    box-shadow: 0 16px 50px rgba(42, 20, 89, .08);
+    position: relative;
+}
+
+/* CABEÇALHO */
+header {
+    min-height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,.96);
+}
+
+/* LOGOTIPOS */
+.brands {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.senac {
+    color: #19358c;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    line-height: 1;
+}
+
+.senac::before {
+    content: "⌁";
+    display: block;
+    color: #f4b900;
+    font-size: 23px;
+    text-align: center;
+    height: 13px;
+}
+
+.brand-divider {
+    height: 34px;
+    width: 2px;
+    background: #ddd6eb;
+}
+
+.garoto {
+    display: inline-block;
+    padding: 4px 9px;
+    color: #d71920;
+    background: #ffdf00;
+    border: 2px solid #f2b900;
+    border-radius: 8px 3px 8px 3px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: italic;
+    transform: rotate(-5deg);
+}
+
+/* MENU DE NAVEGAÇÃO */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 3vw, 36px);
+}
+
+nav a {
+    text-decoration: none;
+    color: #4d286f;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color .2s;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+/* BOTÃO ACESSAR CONTA */
+.account {
+    border: 0;
+    border-radius: 30px;
+    padding: 12px 20px;
+    color: #fff;
+    background: linear-gradient(110deg, #6900ed, #4e12c7);
+    font: 500 14px "Poppins", sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.account:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px #6428d744;
+}
+
+.account i {
+    margin-right: 9px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    position: relative;
+    padding: 34px 34px 46px;
+}
+
+/* DETALHE AMARELO */
+.yellow-shape {
+    position: absolute;
+    width: 220px;
+    height: 155px;
+    right: -1px;
+    top: -1px;
+    background: var(--yellow);
+    border-radius: 0 0 0 100%;
+
+    clip-path: path(
+        "M 0 0 L 220 0 L 220 155 C 176 170 157 80 95 36 C 60 10 24 35 0 0 Z"
+    );
+
+    opacity: .95;
+    pointer-events: none;
+}
+
+/* INTRODUÇÃO */
+.intro {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 19px;
+    border-radius: 30px;
+    background: var(--purple);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #70258f;
+    font-size: clamp(27px, 3vw, 34px);
+    font-weight: 500;
+    letter-spacing: -.7px;
+}
+
+.subtitle {
+    color: #38466f;
+    font-size: 16px;
+    margin-top: 7px;
+}
+
+/* CAMPO DE PESQUISA */
+.search-wrap {
+    width: min(490px, 100%);
+    height: 48px;
+    margin: 14px 0 26px 6px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #d8d2e3;
+    border-radius: 28px;
+    box-shadow: 0 3px 5px #00000016;
+    padding: 0 17px;
+    position: relative;
+    z-index: 1;
+}
+
+.search-wrap input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    min-width: 0;
+    color: var(--ink);
+    font: 14px "Poppins", sans-serif;
+    background: transparent;
+}
+
+.search-wrap input::placeholder {
+    color: #63318a;
+    opacity: 1;
+}
+
+.search-wrap i {
+    color: #7253b5;
+    font-size: 19px;
+}
+
+/* BOTÕES DE FILTRO */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 34px 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.filter {
+    border: 1px solid #d5cde2;
+    background: #fff;
+    color: var(--purple);
+    border-radius: 24px;
+    padding: 7px 18px;
+    font: 600 13px "Poppins", sans-serif;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.filter:hover,
+.filter.active {
+    background: var(--purple);
+    border-color: var(--purple);
+    color: #fff;
+}
+
+/* GRADE DOS CURSOS */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* CARD DO CURSO */
+.course-card {
+    overflow: hidden;
+    border: 1px solid #e6e1f0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: var(--shadow);
+    transition: transform .22s, box-shadow .22s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 28px rgba(67, 35, 137, .16);
+}
+
+/* IMAGEM DO CURSO */
+.course-image {
+    height: 165px;
+    position: relative;
+    background: #e8e5ef;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ETIQUETA DA CATEGORIA */
+.category {
+    position: absolute;
+    left: 13px;
+    bottom: -15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 24px;
+    color: #fff;
+    background: linear-gradient(110deg, #6f31dd, #5522c1);
+    font-size: 12px;
+    box-shadow: 0 3px 8px #3d1a8c33;
+}
+
+/* INFORMAÇÕES DO CURSO */
+.course-content {
+    padding: 25px 16px 13px;
+}
+
+.course-content h2 {
+    min-height: 42px;
+    color: #5c2acb;
+    font-size: 15px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+/* CARGA HORÁRIA E NÍVEL */
+.details {
+    display: grid;
+    gap: 8px;
+    margin: 10px 0 13px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #55516b;
+    font-size: 11px;
+}
+
+.detail i {
+    color: #7439ed;
+    width: 16px;
+    font-size: 14px;
+}
+
+.level-bars {
+    letter-spacing: -2px;
+    font-size: 15px !important;
+}
+
+/* BOTÃO SAIBA MAIS */
+.more {
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(110deg, #7034df, #5426c4);
+    font: 500 12px "Poppins", sans-serif;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.more:hover {
+    background: var(--purple-dark);
+}
+
+/* MENSAGEM DE BUSCA VAZIA */
+.empty {
+    display: none;
+    grid-column: 1 / -1;
+    padding: 35px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* RODAPÉ */
+footer {
+    padding: 17px 25px;
+    text-align: center;
+    color: #8b8498;
+    font-size: 11px;
+    border-top: 1px solid var(--line);
+}
+
+/* TABLETS */
+@media (max-width: 850px) {
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .yellow-shape {
+        opacity: .35;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 560px) {
+
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 18px 14px;
+        gap: 16px;
+    }
+
+    .brands {
+        margin-right: auto;
+    }
+
+    .senac {
+        font-size: 23px;
+    }
+
+    .garoto {
+        font-size: 17px;
+    }
+
+    .account {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 12px 20px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    main {
+        padding: 27px 17px 30px;
+    }
+
+    .subtitle {
+        max-width: 90%;
+        font-size: 13px;
+    }
+
+    .filters {
+        margin-left: 0;
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .filter {
+        padding: 7px 12px;
+        font-size: 11px;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-image {
+        height: 190px;
+    }
+
+    .course-content h2 {
+        min-height: auto;
+    }
+
+    .yellow-shape {
+        width: 130px;
+        height: 100px;
+    }
+}
+
+
+
+
+/* Responsividade para se adaptar a todas as telas*/
+
+
+
+/* RESPONSIVIDADE - TABLETS */
+/* ============================= */
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        padding: 18px;
+    }
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        padding: 30px 25px;
+    }
+
+}
+
+
+/* ============================= */
+/* RESPONSIVIDADE - CELULARES */
+/* ============================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .page {
+        border-radius: 12px;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+        flex-direction: column;
+        padding: 18px 12px;
+        gap: 18px;
+    }
+
+    .brands {
+        justify-content: center;
+    }
+
+    .senac {
+        font-size: 24px;
+    }
+
+    .garoto {
+        font-size: 17px;
+    }
+
+    /* MENU */
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 18px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    /* BOTÃO DE ACESSO */
+
+    .account {
+        width: 100%;
+        max-width: 220px;
+        padding: 11px;
+    }
+
+    /* CONTEÚDO */
+
+    main {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* PESQUISA */
+
+    .search-wrap {
+        width: 100%;
+        margin: 18px 0;
+    }
+
+    /* FILTROS */
+
+    .filters {
+        margin: 15px 0 25px;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .filter {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    /* CARDS */
+
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .course-card {
+        width: 100%;
+    }
+
+    .course-image {
+        height: 190px;
+    }
+
+    .course-content {
+        padding: 25px 16px 18px;
+    }
+
+    .course-content h2 {
+        font-size: 16px;
+        min-height: auto;
+    }
+
+    .detail {
+        font-size: 12px;
+    }
+
+    .more {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* DETALHE AMARELO */
+
+    .yellow-shape {
+        width: 110px;
+        height: 90px;
+        opacity: .35;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+        font-size: 10px;
+        padding: 16px 10px;
+    }
+
+}
+
+
+/* ============================= */
+/* CELULARES PEQUENOS */
+/* ============================= */
+
+@media screen and (max-width: 380px) {
+
+    h1 {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .filter {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+
+    .course-image {
+        height: 160px;
+    }
+
+}

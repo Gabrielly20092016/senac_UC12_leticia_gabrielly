@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução à Tecnologia e Sistemas Industriais</title>
+    <link rel="stylesheet" href="introducao_a_tecnologia.css">
+    <script src="introducao_a_tecnologia.js" defer></script>
+</head>
+
+<body>
+
+<header class="topo">
+    <div class="brands">
+        <span class="senac">Senac</span>
+        <span class="brand-divider"></span>
+        <span class="garoto">Garoto</span>
+    </div>
+
+    <div class="voltar">
+        <a href="cursos_disponiveis.html">← Voltar aos cursos</a>
+    </div>
+</header>
+
+<section class="banner">
+    <div>
+        <span class="categoria">CURSO DE TECNOLOGIA</span>
+        <h1>Introdução à tecnologia e sistemas industriais</h1>
+        <p>
+            Aprenda sobre tecnologia industrial, automação,
+            máquinas, sensores e Indústria 4.0.
+        </p>
+
+        <div class="informacoes">
+            <span>◷ 20 horas</span>
+            <span>▣ Nível básico</span>
+            <span>✓ 3 módulos</span>
+        </div>
+
+        <a href="#aulas" class="botao-amarelo">Começar curso →</a>
+    </div>
+
+    <div class="imagem-banner">⚙</div>
+</section>
+
+<main class="container">
+
+    <section class="progresso">
+        <h2>Seu progresso</h2>
+
+        <div class="barra">
+            <div id="barraProgresso"></div>
+        </div>
+
+        <p id="textoProgresso">0% concluído</p>
+    </section>
+
+    <section id="aulas">
+
+        <div class="titulo-secao">
+            <span>TRILHA DE APRENDIZAGEM</span>
+            <h2>Conteúdo do curso</h2>
+        </div>
+
+        <!-- AULA 1 -->
+        <article class="aula">
+            <span class="modulo">MÓDULO 01</span>
+
+            <h3>O que é tecnologia industrial?</h3>
+
+            <p>
+                Entenda como a tecnologia é utilizada para
+                melhorar os processos dentro das indústrias.
+            </p>
+
+            <h4>Videoaula 1</h4>
+
+            <div class="video-aula">
+                <iframe
+                    src="https://www.youtube.com/embed/C19Yi_JEDE4"
+                    title="Aula de Introdução à Tecnologia"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="conteudo-aula">
+                <h4>O que você vai aprender?</h4>
+
+                <p>
+                    A tecnologia industrial utiliza máquinas,
+                    equipamentos, sistemas e conhecimentos
+                    técnicos para apoiar os processos de produção.
+                </p>
+
+                <p>
+                    Ela ajuda a organizar informações,
+                    acompanhar atividades e melhorar a qualidade
+                    dos processos industriais.
+                </p>
+            </div>
+
+            <button class="botao-concluir" data-aula="1">
+                Marcar aula como concluída
+            </button>
+        </article>
+
+        <!-- AULA 2 -->
+        <article class="aula">
+            <span class="modulo">MÓDULO 02</span>
+
+            <h3>Automação, sensores e máquinas</h3>
+
+            <p>
+                Conheça os equipamentos utilizados nos
+                processos automatizados.
+            </p>
+
+            <h4>Videoaula 2</h4>
+
+            <div class="video-aula">
+                <iframe
+                    src="https://www.youtube.com/embed/ID_DO_VIDEO_2"
+                    title="Aula de Automação, Sensores e Máquinas"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="conteudo-aula">
+                <h4>O que você vai aprender?</h4>
+
+                <p>
+                    A automação industrial utiliza tecnologias
+                    para controlar ou executar determinadas
+                    atividades.
+                </p>
+
+                <p>
+                    Os sensores identificam informações do
+                    ambiente, como temperatura, distância
+                    e presença de objetos.
+                </p>
+            </div>
+
+            <button class="botao-concluir" data-aula="2">
+                Marcar aula como concluída
+            </button>
+        </article>
+
+        <!-- AULA 3 -->
+        <article class="aula">
+            <span class="modulo">MÓDULO 03</span>
+
+            <h3>Indústria 4.0 e Internet das Coisas</h3>
+
+            <p>
+                Descubra como os equipamentos podem se
+                conectar e compartilhar informações.
+            </p>
+
+            <h4>Videoaula 3</h4>
+
+            <div class="video-aula">
+                <iframe
+                    src="https://www.youtube.com/embed/ID_DO_VIDEO_3"
+                    title="Aula de Indústria 4.0 e Internet das Coisas"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="conteudo-aula">
+                <h4>O que você vai aprender?</h4>
+
+                <p>
+                    A Indústria 4.0 utiliza tecnologias digitais
+                    para conectar máquinas, equipamentos
+                    e sistemas.
+                </p>
+
+                <p>
+                    A Internet das Coisas permite que dispositivos
+                    conectados compartilhem dados e informações.
+                </p>
+            </div>
+
+            <button class="botao-concluir" data-aula="3">
+                Marcar aula como concluída
+            </button>
+        </article>
+
+    </section>
+
+    <!-- QUIZ -->
+    <section class="avaliacao" id="quiz">
+
+        <span class="categoria-roxa">TESTE SEU CONHECIMENTO</span>
+        <h2>Quiz de aprendizagem</h2>
+
+        <p>Responda às perguntas sobre o conteúdo das aulas.</p>
+
+        <form id="formQuiz">
+
+            <div class="pergunta">
+                <h3>1. Qual é um dos objetivos da tecnologia industrial?</h3>
+
+                <label><input type="radio" name="q1" value="a"> Substituir todo o planejamento humano.</label>
+                <label><input type="radio" name="q1" value="b"> Apoiar e melhorar os processos de produção.</label>
+                <label><input type="radio" name="q1" value="c"> Impedir a coleta de informações.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>2. Qual é a função de um sensor?</h3>
+
+                <label><input type="radio" name="q2" value="a"> Detectar informações do ambiente.</label>
+                <label><input type="radio" name="q2" value="b"> Decorar máquinas.</label>
+                <label><input type="radio" name="q2" value="c"> Substituir todos os computadores.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>3. O que caracteriza a Internet das Coisas?</h3>
+
+                <label><input type="radio" name="q3" value="a"> O uso exclusivo de documentos impressos.</label>
+                <label><input type="radio" name="q3" value="b"> A desconexão entre equipamentos.</label>
+                <label><input type="radio" name="q3" value="c"> A conexão de dispositivos para compartilhar dados.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>4. Por que a segurança é importante na indústria?</h3>
+
+                <label><input type="radio" name="q4" value="a"> Para evitar manutenção.</label>
+                <label><input type="radio" name="q4" value="b"> Para proteger pessoas, sistemas e informações.</label>
+                <label><input type="radio" name="q4" value="c"> Para impedir atualizações.</label>
+            </div>
+
+            <button class="botao-roxo" type="submit">Enviar respostas</button>
+
+            <p id="resultadoQuiz"></p>
+
+        </form>
+    </section>
+
+    <!-- PROVA FINAL -->
+    <section class="avaliacao" id="prova">
+
+        <span class="categoria-roxa">ETAPA FINAL</span>
+        <h2>Prova final</h2>
+
+        <p>
+            Responda às cinco questões. É necessário acertar
+            pelo menos quatro para ser aprovado.
+        </p>
+
+        <form id="formProva">
+
+            <div class="pergunta">
+                <h3>1. Uma máquina utiliza um sensor para identificar uma peça. Isso é:</h3>
+
+                <label><input type="radio" name="p1" value="a"> Coleta de dados por sensor.</label>
+                <label><input type="radio" name="p1" value="b"> Impressão de documentos.</label>
+                <label><input type="radio" name="p1" value="c"> Comunicação sem informação.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>2. Um controlador pode:</h3>
+
+                <label><input type="radio" name="p2" value="a"> Apagar todos os dados.</label>
+                <label><input type="radio" name="p2" value="b"> Receber dados e comandar ações.</label>
+                <label><input type="radio" name="p2" value="c"> Funcionar sem informações.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>3. Qual é um exemplo de aplicação da IoT?</h3>
+
+                <label><input type="radio" name="p3" value="a"> Uma máquina conectada que envia dados.</label>
+                <label><input type="radio" name="p3" value="b"> Um equipamento sem conexão.</label>
+                <label><input type="radio" name="p3" value="c"> Um formulário somente em papel.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>4. Os dados da produção podem ajudar a:</h3>
+
+                <label><input type="radio" name="p4" value="a"> Eliminar avaliações.</label>
+                <label><input type="radio" name="p4" value="b"> Impedir a identificação de problemas.</label>
+                <label><input type="radio" name="p4" value="c"> Acompanhar resultados e apoiar decisões.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>5. Antes de operar um equipamento, é importante:</h3>
+
+                <label><input type="radio" name="p5" value="a"> Ignorar as orientações.</label>
+                <label><input type="radio" name="p5" value="b"> Seguir os procedimentos de segurança.</label>
+                <label><input type="radio" name="p5" value="c"> Retirar as proteções.</label>
+            </div>
+
+            <button class="botao-roxo" type="submit">Finalizar avaliação</button>
+
+            <p id="resultadoProva"></p>
+
+        </form>
+    </section>
+
+    <!-- CERTIFICADO -->
+    <section class="certificado">
+        <div>
+            <span class="categoria-roxa">SUA CONQUISTA</span>
+            <h2>Certificado de conclusão</h2>
+
+            <p id="mensagemCertificado">
+                Conclua as aulas, o quiz e a prova final
+                para liberar seu certificado demonstrativo.
+            </p>
+        </div>
+
+        <button id="acessarCertificado" disabled>
+            Acessar certificado
+        </button>
+    </section>
+
+    <p class="aviso">
+        Este é um curso demonstrativo. O certificado gerado
+        não possui validade oficial do Senac ou da Garoto.
+    </p>
+
+</main>
+
+<footer>
+    SENAC + GAROTO · Ambiente demonstrativo
+</footer>
+
+</body>
+</html>
