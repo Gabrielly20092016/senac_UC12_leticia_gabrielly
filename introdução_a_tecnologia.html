@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introdução à Tecnologia e Sistemas Industriais</title>
-    <link rel="stylesheet" href="introducao_a_tecnologia.css">
-    <script src="introducao_a_tecnologia.js" defer></script>
+    <link rel="stylesheet" href="CSS/introducao_a_tecnologia.css">
+    <script src="js/introducao_a_tecnologia.js" defer></script>
 </head>
 
 <body>
@@ -24,12 +25,13 @@
 </header>
 
 <section class="banner">
-    <div>
+    <div class="banner-conteudo">
         <span class="categoria">CURSO DE TECNOLOGIA</span>
-        <h1>Introdução à tecnologia e sistemas industriais</h1>
+        <h1>Introdução à Tecnologia e Sistemas Industriais</h1>
+
         <p>
-            Aprenda sobre tecnologia industrial, automação,
-            máquinas, sensores e Indústria 4.0.
+            Aprenda como a tecnologia, a automação e os sistemas
+            inteligentes transformam os processos industriais.
         </p>
 
         <div class="informacoes">
@@ -54,6 +56,7 @@
         </div>
 
         <p id="textoProgresso">0% concluído</p>
+        <p id="statusCurso">Você ainda não concluiu nenhuma etapa.</p>
     </section>
 
     <section id="aulas">
@@ -61,256 +64,312 @@
         <div class="titulo-secao">
             <span>TRILHA DE APRENDIZAGEM</span>
             <h2>Conteúdo do curso</h2>
+            <p>Leia os conteúdos com atenção e conclua cada módulo.</p>
         </div>
 
-        <!-- AULA 1 -->
         <article class="aula">
             <span class="modulo">MÓDULO 01</span>
-
-            <h3>O que é tecnologia industrial?</h3>
-
-            <p>
-                Entenda como a tecnologia é utilizada para
-                melhorar os processos dentro das indústrias.
-            </p>
-
-            <h4>Videoaula 1</h4>
-
-            <div class="video-aula">
-                <iframe
-                    src="https://www.youtube.com/embed/C19Yi_JEDE4"
-                    title="Aula de Introdução à Tecnologia"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
+            <h3>Fundamentos da tecnologia industrial</h3>
 
             <div class="conteudo-aula">
-                <h4>O que você vai aprender?</h4>
+                <h4>O que é tecnologia industrial?</h4>
 
                 <p>
-                    A tecnologia industrial utiliza máquinas,
-                    equipamentos, sistemas e conhecimentos
-                    técnicos para apoiar os processos de produção.
+                    A tecnologia industrial reúne conhecimentos, ferramentas,
+                    máquinas e sistemas utilizados para desenvolver e melhorar
+                    os processos de produção. Ela está presente em diferentes
+                    etapas de uma indústria, desde o planejamento até o controle
+                    de qualidade dos produtos.
                 </p>
 
                 <p>
-                    Ela ajuda a organizar informações,
-                    acompanhar atividades e melhorar a qualidade
-                    dos processos industriais.
+                    Sua aplicação permite acompanhar informações, organizar
+                    tarefas, reduzir falhas e melhorar o aproveitamento dos
+                    recursos. Entretanto, a tecnologia não atua sozinha:
+                    profissionais capacitados precisam interpretar os dados,
+                    planejar atividades e tomar decisões.
                 </p>
+
+                <h4>Integração entre pessoas e tecnologia</h4>
+
+                <p>
+                    Em uma indústria, equipamentos e sistemas podem executar
+                    tarefas específicas, mas a participação humana continua
+                    importante. Os profissionais analisam resultados, identificam
+                    problemas e verificam se os processos estão funcionando
+                    conforme o planejado.
+                </p>
+
+                <div class="destaque">
+                    <strong>Exemplo prático:</strong>
+                    uma fábrica utiliza um sistema para registrar a quantidade
+                    de produtos fabricados por hora. Com essas informações,
+                    a equipe consegue identificar períodos de baixa produção
+                    e investigar possíveis causas.
+                </div>
             </div>
 
             <button class="botao-concluir" data-aula="1">
-                Marcar aula como concluída
+                Marcar módulo como concluído
             </button>
+            <p class="status-aula" id="statusAula1">Módulo pendente</p>
         </article>
 
-        <!-- AULA 2 -->
         <article class="aula">
             <span class="modulo">MÓDULO 02</span>
-
-            <h3>Automação, sensores e máquinas</h3>
-
-            <p>
-                Conheça os equipamentos utilizados nos
-                processos automatizados.
-            </p>
-
-            <h4>Videoaula 2</h4>
-
-            <div class="video-aula">
-                <iframe
-                    src="https://www.youtube.com/embed/ID_DO_VIDEO_2"
-                    title="Aula de Automação, Sensores e Máquinas"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
+            <h3>Automação, sensores e sistemas de controle</h3>
 
             <div class="conteudo-aula">
-                <h4>O que você vai aprender?</h4>
+                <h4>Como funciona a automação industrial?</h4>
 
                 <p>
-                    A automação industrial utiliza tecnologias
-                    para controlar ou executar determinadas
-                    atividades.
+                    A automação industrial utiliza tecnologias para controlar
+                    máquinas e processos com menor necessidade de intervenção
+                    manual em cada etapa. Ela pode aumentar a regularidade das
+                    operações, melhorar a produtividade e contribuir para a
+                    segurança dos processos.
                 </p>
 
                 <p>
-                    Os sensores identificam informações do
-                    ambiente, como temperatura, distância
-                    e presença de objetos.
+                    Um sistema automatizado pode envolver sensores, controladores
+                    e atuadores. Esses componentes trabalham em conjunto:
+                    sensores coletam informações, controladores analisam os
+                    dados conforme uma programação e atuadores executam ações.
                 </p>
+
+                <h4>Entendendo os componentes</h4>
+
+                <ul>
+                    <li><strong>Sensores:</strong> identificam condições como temperatura, pressão e presença de objetos.</li>
+                    <li><strong>Controladores:</strong> processam informações e determinam ações conforme a programação.</li>
+                    <li><strong>Atuadores:</strong> executam ações, como movimentar uma peça ou abrir uma válvula.</li>
+                </ul>
+
+                <div class="destaque">
+                    <strong>Exemplo prático:</strong>
+                    em uma esteira industrial, um sensor identifica a chegada
+                    de uma embalagem. O controlador recebe essa informação e
+                    pode comandar um mecanismo para direcioná-la à próxima etapa.
+                </div>
             </div>
 
             <button class="botao-concluir" data-aula="2">
-                Marcar aula como concluída
+                Marcar módulo como concluído
             </button>
+            <p class="status-aula" id="statusAula2">Módulo pendente</p>
         </article>
 
-        <!-- AULA 3 -->
         <article class="aula">
             <span class="modulo">MÓDULO 03</span>
-
             <h3>Indústria 4.0 e Internet das Coisas</h3>
 
-            <p>
-                Descubra como os equipamentos podem se
-                conectar e compartilhar informações.
-            </p>
-
-            <h4>Videoaula 3</h4>
-
-            <div class="video-aula">
-                <iframe
-                    src="https://www.youtube.com/embed/ID_DO_VIDEO_3"
-                    title="Aula de Indústria 4.0 e Internet das Coisas"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
             <div class="conteudo-aula">
-                <h4>O que você vai aprender?</h4>
+                <h4>O que é a Indústria 4.0?</h4>
 
                 <p>
-                    A Indústria 4.0 utiliza tecnologias digitais
-                    para conectar máquinas, equipamentos
-                    e sistemas.
+                    A Indústria 4.0 representa uma transformação nos processos
+                    industriais por meio da integração de tecnologias digitais.
+                    Entre elas estão a Internet das Coisas, a análise de dados,
+                    a computação em nuvem e os sistemas inteligentes.
                 </p>
 
                 <p>
-                    A Internet das Coisas permite que dispositivos
-                    conectados compartilhem dados e informações.
+                    Essas tecnologias permitem que máquinas e sistemas
+                    compartilhem informações. Dessa forma, uma indústria pode
+                    acompanhar o funcionamento dos equipamentos, analisar
+                    resultados e identificar situações que exigem atenção.
                 </p>
+
+                <h4>Internet das Coisas (IoT)</h4>
+
+                <p>
+                    A Internet das Coisas permite conectar objetos físicos
+                    à rede para coletar e transmitir dados. No ambiente
+                    industrial, sensores conectados podem enviar informações
+                    sobre o funcionamento de máquinas para um sistema de
+                    monitoramento.
+                </p>
+
+                <h4>Desafios da transformação digital</h4>
+
+                <p>
+                    A modernização industrial também exige planejamento,
+                    profissionais qualificados, proteção de dados e segurança
+                    digital. Conectar equipamentos sem estabelecer medidas
+                    adequadas de proteção pode aumentar os riscos de acesso
+                    indevido e interrupção dos processos.
+                </p>
+
+                <div class="destaque">
+                    <strong>Exemplo prático:</strong>
+                    sensores instalados em máquinas enviam dados de temperatura
+                    para um sistema. A equipe acompanha essas informações e
+                    pode programar uma inspeção quando identifica alterações
+                    fora do padrão.
+                </div>
             </div>
 
             <button class="botao-concluir" data-aula="3">
-                Marcar aula como concluída
+                Marcar módulo como concluído
             </button>
+            <p class="status-aula" id="statusAula3">Módulo pendente</p>
         </article>
 
     </section>
 
-    <!-- QUIZ -->
     <section class="avaliacao" id="quiz">
-
-        <span class="categoria-roxa">TESTE SEU CONHECIMENTO</span>
+        <span class="categoria-roxa">AVALIAÇÃO DOS MÓDULOS</span>
         <h2>Quiz de aprendizagem</h2>
 
-        <p>Responda às perguntas sobre o conteúdo das aulas.</p>
+        <p>
+            Responda às seis questões. Elas exigem interpretação
+            e aplicação dos conceitos estudados.
+        </p>
+
+        <div class="contador">
+            <span id="contadorQuiz">0 de 6 questões respondidas</span>
+            <span id="estadoQuiz">Não iniciado</span>
+        </div>
 
         <form id="formQuiz">
 
             <div class="pergunta">
-                <h3>1. Qual é um dos objetivos da tecnologia industrial?</h3>
+                <h3>1. Uma indústria começou a registrar digitalmente a produção de cada turno. Ao analisar os dados, percebeu que determinados períodos apresentam menor produtividade. Qual é a principal contribuição da tecnologia nesse caso?</h3>
 
-                <label><input type="radio" name="q1" value="a"> Substituir todo o planejamento humano.</label>
-                <label><input type="radio" name="q1" value="b"> Apoiar e melhorar os processos de produção.</label>
-                <label><input type="radio" name="q1" value="c"> Impedir a coleta de informações.</label>
+                <label><input type="radio" name="q1" value="a"> Eliminar a necessidade de profissionais responsáveis pela produção.</label>
+                <label><input type="radio" name="q1" value="b"> Fornecer informações que apoiam a identificação de problemas e a tomada de decisões.</label>
+                <label><input type="radio" name="q1" value="c"> Garantir que todos os problemas sejam resolvidos automaticamente.</label>
+                <label><input type="radio" name="q1" value="d"> Substituir o planejamento por registros sem análise.</label>
             </div>
 
             <div class="pergunta">
-                <h3>2. Qual é a função de um sensor?</h3>
+                <h3>2. Uma empresa instala sensores em seus equipamentos, mas não possui um sistema para interpretar os dados coletados. Qual limitação essa situação apresenta?</h3>
 
-                <label><input type="radio" name="q2" value="a"> Detectar informações do ambiente.</label>
-                <label><input type="radio" name="q2" value="b"> Decorar máquinas.</label>
-                <label><input type="radio" name="q2" value="c"> Substituir todos os computadores.</label>
+                <label><input type="radio" name="q2" value="a"> Os sensores deixam de detectar qualquer informação física.</label>
+                <label><input type="radio" name="q2" value="b"> A coleta de dados, isoladamente, não garante que as informações sejam transformadas em decisões úteis.</label>
+                <label><input type="radio" name="q2" value="c"> Os equipamentos passam a funcionar sem energia elétrica.</label>
+                <label><input type="radio" name="q2" value="d"> A automação se torna independente de qualquer programação.</label>
             </div>
 
             <div class="pergunta">
-                <h3>3. O que caracteriza a Internet das Coisas?</h3>
+                <h3>3. Em uma linha de produção, um sensor identifica uma embalagem, o controlador interpreta o sinal e um mecanismo a direciona para outra esteira. Qual alternativa representa corretamente essa sequência?</h3>
 
-                <label><input type="radio" name="q3" value="a"> O uso exclusivo de documentos impressos.</label>
-                <label><input type="radio" name="q3" value="b"> A desconexão entre equipamentos.</label>
-                <label><input type="radio" name="q3" value="c"> A conexão de dispositivos para compartilhar dados.</label>
+                <label><input type="radio" name="q3" value="a"> Atuador, sensor e controlador.</label>
+                <label><input type="radio" name="q3" value="b"> Controlador, atuador e sensor.</label>
+                <label><input type="radio" name="q3" value="c"> Sensor, controlador e atuador.</label>
+                <label><input type="radio" name="q3" value="d"> Sensor, atuador e controlador.</label>
             </div>
 
             <div class="pergunta">
-                <h3>4. Por que a segurança é importante na indústria?</h3>
+                <h3>4. Uma fábrica conecta suas máquinas à internet para acompanhar dados de funcionamento em tempo real. Qual característica da Indústria 4.0 está mais diretamente presente?</h3>
 
-                <label><input type="radio" name="q4" value="a"> Para evitar manutenção.</label>
-                <label><input type="radio" name="q4" value="b"> Para proteger pessoas, sistemas e informações.</label>
-                <label><input type="radio" name="q4" value="c"> Para impedir atualizações.</label>
+                <label><input type="radio" name="q4" value="a"> Isolamento dos equipamentos para impedir a comunicação.</label>
+                <label><input type="radio" name="q4" value="b"> Integração digital e compartilhamento de informações entre dispositivos.</label>
+                <label><input type="radio" name="q4" value="c"> Substituição de todos os sistemas digitais por controles manuais.</label>
+                <label><input type="radio" name="q4" value="d"> Eliminação da necessidade de monitoramento.</label>
             </div>
 
-            <button class="botao-roxo" type="submit">Enviar respostas</button>
+            <div class="pergunta">
+                <h3>5. Um equipamento conectado começa a enviar informações incorretas ao sistema de monitoramento. Qual atitude demonstra uma análise adequada do problema?</h3>
 
-            <p id="resultadoQuiz"></p>
+                <label><input type="radio" name="q5" value="a"> Ignorar os dados porque o equipamento está conectado.</label>
+                <label><input type="radio" name="q5" value="b"> Alterar todos os parâmetros sem verificar a origem da falha.</label>
+                <label><input type="radio" name="q5" value="c"> Verificar o sensor, a comunicação e o processamento das informações antes de decidir uma correção.</label>
+                <label><input type="radio" name="q5" value="d"> Desconsiderar qualquer registro anterior do equipamento.</label>
+            </div>
+
+            <div class="pergunta">
+                <h3>6. Uma indústria pretende conectar novos equipamentos à sua rede. Além da eficiência, qual aspecto deve ser considerado para reduzir riscos na transformação digital?</h3>
+
+                <label><input type="radio" name="q6" value="a"> Segurança digital, controle de acesso e proteção das informações.</label>
+                <label><input type="radio" name="q6" value="b"> Compartilhamento irrestrito de todas as senhas.</label>
+                <label><input type="radio" name="q6" value="c"> Desativação de atualizações e mecanismos de proteção.</label>
+                <label><input type="radio" name="q6" value="d"> Conexão de dispositivos sem planejamento.</label>
+            </div>
+
+            <button class="botao-roxo" type="submit">Corrigir quiz</button>
+            <p id="resultadoQuiz" class="resultado"></p>
 
         </form>
     </section>
 
-    <!-- PROVA FINAL -->
     <section class="avaliacao" id="prova">
-
         <span class="categoria-roxa">ETAPA FINAL</span>
         <h2>Prova final</h2>
 
         <p>
-            Responda às cinco questões. É necessário acertar
-            pelo menos quatro para ser aprovado.
+            A prova contém cinco questões de interpretação e situações
+            práticas. Para aprovação, você precisa acertar pelo menos
+            quatro questões.
         </p>
+
+        <div class="contador">
+            <span id="contadorProva">0 de 5 questões respondidas</span>
+            <span id="estadoProva">Não iniciada</span>
+        </div>
 
         <form id="formProva">
 
             <div class="pergunta">
-                <h3>1. Uma máquina utiliza um sensor para identificar uma peça. Isso é:</h3>
+                <h3>1. Uma indústria deseja reduzir paradas inesperadas em suas máquinas. Para isso, instala sensores que monitoram temperatura e vibração. Qual estratégia melhor representa o uso desses dados?</h3>
 
-                <label><input type="radio" name="p1" value="a"> Coleta de dados por sensor.</label>
-                <label><input type="radio" name="p1" value="b"> Impressão de documentos.</label>
-                <label><input type="radio" name="p1" value="c"> Comunicação sem informação.</label>
+                <label><input type="radio" name="p1" value="a"> Esperar que a máquina pare para somente então analisar seu funcionamento.</label>
+                <label><input type="radio" name="p1" value="b"> Utilizar os dados para identificar alterações e planejar ações de manutenção.</label>
+                <label><input type="radio" name="p1" value="c"> Desativar os sensores quando os valores mudarem.</label>
+                <label><input type="radio" name="p1" value="d"> Substituir os registros por avaliações sem critérios.</label>
             </div>
 
             <div class="pergunta">
-                <h3>2. Um controlador pode:</h3>
+                <h3>2. Em um sistema automatizado, o sensor detecta corretamente um objeto, mas o mecanismo não executa a ação esperada. Qual análise é mais adequada?</h3>
 
-                <label><input type="radio" name="p2" value="a"> Apagar todos os dados.</label>
-                <label><input type="radio" name="p2" value="b"> Receber dados e comandar ações.</label>
-                <label><input type="radio" name="p2" value="c"> Funcionar sem informações.</label>
+                <label><input type="radio" name="p2" value="a"> Concluir imediatamente que o sensor está quebrado.</label>
+                <label><input type="radio" name="p2" value="b"> Verificar o controlador, a programação, a comunicação e o atuador.</label>
+                <label><input type="radio" name="p2" value="c"> Remover todos os componentes do sistema.</label>
+                <label><input type="radio" name="p2" value="d"> Ignorar o problema porque a detecção funcionou.</label>
             </div>
 
             <div class="pergunta">
-                <h3>3. Qual é um exemplo de aplicação da IoT?</h3>
+                <h3>3. Uma fábrica utiliza dispositivos conectados que enviam dados para uma plataforma central. Qual benefício depende diretamente dessa integração?</h3>
 
-                <label><input type="radio" name="p3" value="a"> Uma máquina conectada que envia dados.</label>
-                <label><input type="radio" name="p3" value="b"> Um equipamento sem conexão.</label>
-                <label><input type="radio" name="p3" value="c"> Um formulário somente em papel.</label>
+                <label><input type="radio" name="p3" value="a"> A impossibilidade de comparar informações entre equipamentos.</label>
+                <label><input type="radio" name="p3" value="b"> O acompanhamento integrado de informações para apoiar decisões sobre a produção.</label>
+                <label><input type="radio" name="p3" value="c"> A eliminação de qualquer necessidade de supervisão.</label>
+                <label><input type="radio" name="p3" value="d"> A garantia de que não ocorrerão falhas técnicas.</label>
             </div>
 
             <div class="pergunta">
-                <h3>4. Os dados da produção podem ajudar a:</h3>
+                <h3>4. Uma empresa digitaliza seus processos, mas não prepara os funcionários para utilizar os novos sistemas. Qual consequência pode ocorrer?</h3>
 
-                <label><input type="radio" name="p4" value="a"> Eliminar avaliações.</label>
-                <label><input type="radio" name="p4" value="b"> Impedir a identificação de problemas.</label>
-                <label><input type="radio" name="p4" value="c"> Acompanhar resultados e apoiar decisões.</label>
+                <label><input type="radio" name="p4" value="a"> A tecnologia passa a funcionar corretamente sem necessidade de conhecimento.</label>
+                <label><input type="radio" name="p4" value="b"> A integração tecnológica pode não alcançar os resultados esperados devido à falta de capacitação.</label>
+                <label><input type="radio" name="p4" value="c"> Os sistemas deixam de precisar de manutenção.</label>
+                <label><input type="radio" name="p4" value="d"> A empresa elimina todos os riscos operacionais.</label>
             </div>
 
             <div class="pergunta">
-                <h3>5. Antes de operar um equipamento, é importante:</h3>
+                <h3>5. Uma máquina conectada à rede industrial apresenta comportamento incomum após uma tentativa de acesso não autorizado. Qual medida é mais coerente com a segurança digital?</h3>
 
-                <label><input type="radio" name="p5" value="a"> Ignorar as orientações.</label>
-                <label><input type="radio" name="p5" value="b"> Seguir os procedimentos de segurança.</label>
-                <label><input type="radio" name="p5" value="c"> Retirar as proteções.</label>
+                <label><input type="radio" name="p5" value="a"> Compartilhar as credenciais com toda a equipe.</label>
+                <label><input type="radio" name="p5" value="b"> Ignorar o evento para evitar interrupções.</label>
+                <label><input type="radio" name="p5" value="c"> Seguir o procedimento de segurança, comunicar a equipe responsável e investigar o acesso.</label>
+                <label><input type="radio" name="p5" value="d"> Desativar os controles de acesso permanentemente.</label>
             </div>
 
-            <button class="botao-roxo" type="submit">Finalizar avaliação</button>
-
-            <p id="resultadoProva"></p>
+            <button class="botao-roxo" type="submit">Finalizar prova</button>
+            <p id="resultadoProva" class="resultado"></p>
 
         </form>
     </section>
 
-    <!-- CERTIFICADO -->
     <section class="certificado">
         <div>
             <span class="categoria-roxa">SUA CONQUISTA</span>
             <h2>Certificado de conclusão</h2>
 
             <p id="mensagemCertificado">
-                Conclua as aulas, o quiz e a prova final
-                para liberar seu certificado demonstrativo.
+                Conclua os três módulos, obtenha aprovação no quiz
+                e alcance a nota mínima na prova final para liberar
+                seu certificado demonstrativo.
             </p>
         </div>
 
@@ -327,7 +386,8 @@
 </main>
 
 <footer>
-    SENAC + GAROTO · Ambiente demonstrativo
+    <p>© 2026 Senac + Garoto</p>
+    <small>Transformando conhecimento em oportunidades.</small>
 </footer>
 
 </body>

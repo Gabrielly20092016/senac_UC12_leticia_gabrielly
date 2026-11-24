@@ -1,0 +1,567 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f5f2fa;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* CABEÇALHO */
+
+.topo {
+    width: 100%;
+    background: #320875;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.brands {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.brand-divider {
+    height: 25px;
+    border-left: 2px solid white;
+}
+
+.garoto {
+    color: #ffdf42;
+}
+
+.voltar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.voltar a:hover {
+    color: #ffdf42;
+}
+
+/* BANNER */
+
+.banner {
+    width: 100%;
+    min-height: 340px;
+    background: linear-gradient(120deg, #320875, #6414d8);
+    color: white;
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.banner-conteudo {
+    width: 100%;
+    max-width: 720px;
+}
+
+.categoria {
+    color: #ffdf42;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.banner h1 {
+    font-size: 36px;
+    line-height: 1.25;
+    margin: 15px 0;
+}
+
+.banner p {
+    font-size: 15px;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.informacoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.botao-amarelo {
+    display: inline-block;
+    background: #ffdf42;
+    color: #320875;
+    padding: 12px 23px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.botao-amarelo:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.imagem-banner {
+    font-size: 100px;
+    color: #ffdf42;
+    flex-shrink: 0;
+}
+
+/* CONTEÚDO CENTRAL */
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 40px auto;
+}
+
+/* PROGRESSO */
+
+.progresso {
+    width: 100%;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 12px rgba(50, 8, 117, .06);
+}
+
+.progresso h2 {
+    color: #320875;
+    margin-bottom: 15px;
+}
+
+.barra {
+    width: 100%;
+    height: 12px;
+    background: #e8def7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#barraProgresso {
+    height: 100%;
+    width: 0%;
+    background: #6414d8;
+    transition: .4s;
+}
+
+#textoProgresso,
+#statusCurso {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+#statusCurso {
+    color: #6414d8;
+}
+
+/* TÍTULOS */
+
+.titulo-secao {
+    text-align: center;
+    margin: 40px 0 25px;
+}
+
+.titulo-secao span,
+.categoria-roxa {
+    color: #6414d8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.titulo-secao h2 {
+    color: #320875;
+    font-size: 27px;
+    margin: 8px 0;
+}
+
+.titulo-secao p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* MÓDULOS */
+
+.aula {
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 13px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(50, 8, 117, .06);
+}
+
+.modulo {
+    display: inline-block;
+    background: #eee5fc;
+    color: #6414d8;
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.aula h3 {
+    color: #320875;
+    font-size: 21px;
+    margin: 15px 0;
+}
+
+.conteudo-aula h4 {
+    color: #6414d8;
+    margin: 22px 0 10px;
+}
+
+.conteudo-aula p {
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 13px;
+    color: #444;
+    text-align: justify;
+}
+
+.conteudo-aula ul {
+    padding-left: 22px;
+    margin: 12px 0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.destaque {
+    background: #f4effc;
+    border-left: 4px solid #6414d8;
+    padding: 17px;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.7;
+    border-radius: 5px;
+}
+
+/* BOTÕES */
+
+.botao-concluir,
+.botao-roxo {
+    display: inline-block;
+    background: #6414d8;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 18px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.botao-concluir:hover,
+.botao-roxo:hover {
+    background: #320875;
+    transform: translateY(-2px);
+}
+
+.botao-concluir.concluido {
+    background: #198754;
+}
+
+.botao-concluir:disabled {
+    cursor: default;
+}
+
+.status-aula {
+    color: #777;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* AVALIAÇÕES */
+
+.avaliacao {
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 13px;
+    margin: 35px 0;
+    box-shadow: 0 3px 12px rgba(50, 8, 117, .06);
+}
+
+.avaliacao h2 {
+    color: #320875;
+    font-size: 25px;
+    margin: 8px 0;
+}
+
+.avaliacao > p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* CONTADOR */
+
+.contador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #f4effc;
+    color: #45109c;
+    padding: 14px;
+    border-radius: 8px;
+    margin: 22px 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* PERGUNTAS */
+
+.pergunta {
+    width: 100%;
+    padding: 22px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pergunta h3 {
+    color: #320875;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.pergunta label {
+    display: block;
+    width: 100%;
+    background: #faf9fd;
+    border: 1px solid #e8def7;
+    border-radius: 8px;
+    padding: 13px 15px;
+    margin: 9px 0;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .2s;
+    overflow-wrap: anywhere;
+}
+
+.pergunta label:hover {
+    background: #eee5fc;
+    border-color: #6414d8;
+}
+
+.pergunta input {
+    margin-right: 9px;
+    accent-color: #6414d8;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #320875;
+}
+
+.correcao {
+    background: #f4effc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* CERTIFICADO */
+
+.certificado {
+    width: 100%;
+    background: white;
+    border: 2px dashed #6414d8;
+    padding: 30px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 35px 0;
+}
+
+.certificado h2 {
+    color: #320875;
+    margin: 10px 0;
+}
+
+.certificado p {
+    font-size: 13px;
+    max-width: 600px;
+}
+
+#acessarCertificado {
+    background: #198754;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+#acessarCertificado:not(:disabled):hover {
+    background: #12643e;
+    transform: translateY(-2px);
+}
+
+#acessarCertificado:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* AVISO */
+
+.aviso {
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+    margin: 25px 0;
+}
+
+/* RODAPÉ */
+
+footer {
+    width: 100%;
+    background: #320875;
+    color: white;
+    text-align: center;
+    padding: 17px;
+    font-size: 12px;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+footer small {
+    opacity: .8;
+}
+
+/* TABLETS */
+
+@media (max-width: 850px) {
+    .banner {
+        padding: 45px 6%;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .imagem-banner {
+        font-size: 75px;
+    }
+
+    .container {
+        width: 92%;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .topo {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .banner {
+        padding: 35px 6%;
+    }
+
+    .banner h1 {
+        font-size: 26px;
+    }
+
+    .banner p {
+        font-size: 14px;
+    }
+
+    .imagem-banner {
+        display: none;
+    }
+
+    .informacoes {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .aula,
+    .avaliacao,
+    .progresso {
+        padding: 20px;
+    }
+
+    .titulo-secao h2 {
+        font-size: 23px;
+    }
+
+    .aula h3 {
+        font-size: 19px;
+    }
+
+    .pergunta h3 {
+        font-size: 14px;
+    }
+
+    .pergunta label {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .certificado {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px;
+    }
+
+    #acessarCertificado {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .contador {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .botao-concluir,
+    .botao-roxo {
+        max-width: 100%;
+    }
+}

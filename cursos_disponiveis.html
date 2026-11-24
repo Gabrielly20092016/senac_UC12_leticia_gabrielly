@@ -7,325 +7,223 @@
 
     <title>Cursos disponíveis | Senac + Garoto</title>
 
-    <!-- Fontes -->
+    <!-- Fontes e ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="cursos.css">
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
-    <div class="page">
+<div class="page">
 
-        <!-- CABEÇALHO -->
-        <header>
+    <!-- CABEÇALHO -->
+    <header>
+       <div class="brands">
+            <span class="senac">Senac</span>
+            <span class="brand-divider"></span>
+            <span class="garoto">Garoto</span>
+        </div>
 
-            <div class="brands">
-                <span class="senac">Senac</span>
-                <span class="brand-divider"></span>
-                <span class="garoto">Garoto</span>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cursos_disponiveis.html">Cursos</a>
+            <a href="#">Certificados</a>
+            <a href="#">Dúvidas</a>
+            <a href="#">Contato</a>
+        </nav>
+
+        <button class="account" onclick="alert('Área de acesso em construção!')">
+            <i class="fa-regular fa-user"></i>
+            Acessar conta
+        </button>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <div class="yellow-shape"></div>
+
+        <section class="intro">
+            <span class="eyebrow">Nossos Cursos</span>
+
+            <h1>Cursos disponíveis</h1>
+
+            <p class="subtitle">
+                Capacitações práticas e atualizadas para o futuro da indústria.
+            </p>
+
+            <!-- PESQUISA -->
+            <label class="search-wrap">
+                <input type="search" id="searchInput"
+                    placeholder="Buscar curso...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+
+            <!-- FILTROS -->
+            <div class="filters">
+                <button class="filter active" data-filter="Todos">Todos</button>
+                <button class="filter" data-filter="Tecnologia">Tecnologia</button>
+                <button class="filter" data-filter="Automação">Automação</button>
+                <button class="filter" data-filter="Segurança">Segurança</button>
+                <button class="filter" data-filter="Indústria 4.0">Indústria 4.0</button>
+                <button class="filter" data-filter="Alimentos">Alimentos</button>
             </div>
+        </section>
 
-            <!-- MENU -->
-            <nav>
-              <a href="index.html">Inicio</a>
-                <a href="">Cursos</a>
-                <a href="#">Certificados</a>
-                <a href="#">Dúvidas</a>
-                <a href="#">Contato</a>
-            </nav>
+        <!-- LISTA DE CURSOS -->
+        <section class="course-grid" id="courseGrid">
 
-            <!-- BOTÃO DE LOGIN -->
-            <button class="account" type="button"
-                onclick="alert('Área de acesso em construção!')">
-
-                <i class="fa-regular fa-user"></i>
-                Acessar conta
-
-            </button>
-
-        </header>
-
-        <!-- CONTEÚDO PRINCIPAL -->
-        <main id="cursos">
-
-            <div class="yellow-shape"></div>
-
-            <section class="intro">
-
-                <span class="eyebrow">Nossos Cursos</span>
-
-                <h1>Cursos disponíveis</h1>
-
-                <p class="subtitle">
-                    Capacitações práticas e atualizadas para o futuro da indústria.
-                </p>
-
-                <!-- BARRA DE PESQUISA -->
-                <label class="search-wrap">
-
-                    <input
-                        id="searchInput"
-                        type="search"
-                        placeholder="Buscar curso..."
-                        aria-label="Buscar curso"
-                    >
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                </label>
-
-                <!-- FILTROS -->
-                <div class="filters">
-
-                    <button class="filter active" data-filter="Todos">
-                        Todos
-                    </button>
-
-                    <button class="filter" data-filter="Tecnologia">
-                        Tecnologia
-                    </button>
-
-                    <button class="filter" data-filter="Automação">
-                        Automação
-                    </button>
-
-                    <button class="filter" data-filter="Segurança">
-                        Segurança
-                    </button>
-
-                    <button class="filter" data-filter="Indústria 4.0">
-                        Indústria 4.0
-                    </button>
-
+            <!-- CURSO 1 -->
+            <article class="course-card" data-category="Tecnologia">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700" alt="Tecnologia industrial">
+                    <span class="category">Tecnologia</span>
                 </div>
 
-            </section>
-
-            <!-- CARDS DOS CURSOS -->
-            <section class="course-grid" id="courseGrid">
-
-                <!-- CURSO 1 -->
-                <article class="course-card"
-                    data-category="Tecnologia"
-                    data-title="Introdução à tecnologia e sistemas industriais">
-
-                    <div class="course-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=85"
-                            alt="Profissional trabalhando com equipamentos industriais"
-                        >
-
-                        <span class="category">
-                            <i class="fa-solid fa-laptop"></i>
-                            Tecnologia
-                        </span>
-
-                    </div>
-
-                    <div class="course-content">
-
-                        <h2>
-                            Introdução à tecnologia e sistemas industriais
-                        </h2>
-
-                        <div class="details">
-
-                            <p class="detail">
-                                <i class="fa-regular fa-clock"></i>
-                                Carga Horária: 20h
-                            </p>
-
-                            <p class="detail">
-                                <i class="fa-solid fa-signal level-bars"></i>
-                                Nível: Básico
-                            </p>
-
-                        </div>
-
-
-             
-                        
-
-                          <a href="introdução_a_tecnologia.html" class="more">
-                                          Saiba mais
-                        <i class="fa-solid fa-arrow-right"></i>
-                                  </a>
-                        </button>
-
-                    </div>
-
-
-                </article>
-
-                <!-- CURSO 2 -->
-                <article class="course-card"
-                    data-category="Automação"
-                    data-title="Automação na prática">
-
-                    <div class="course-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=900&q=85"
-                            alt="Braço robótico em ambiente industrial"
-                        >
-
-                        <span class="category">
-                            <i class="fa-solid fa-gear"></i>
-                            Automação
-                        </span>
-
-                    </div>
-
-                    <div class="course-content">
-
-                        <h2>Automação na Prática</h2>
-
-                        <div class="details">
-
-                            <p class="detail">
-                                <i class="fa-regular fa-clock"></i>
-                                Carga Horária: 32h
-                            </p>
-
-                            <p class="detail">
-                                <i class="fa-solid fa-signal level-bars"></i>
-                                Nível: Básico
-                            </p>
-
-                        </div>
-
-                        <button class="more"
-                            onclick="showCourse('Automação na Prática')">
-
-                            Saiba mais
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-                </article>
-
-                <!-- CURSO 3 -->
-                <article class="course-card"
-                    data-category="Segurança"
-                    data-title="Segurança na prática">
-
-                    <div class="course-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=900&q=85"
-                            alt="Profissionais utilizando equipamentos de segurança"
-                        >
-
-                        <span class="category">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            Segurança
-                        </span>
-
-                    </div>
-
-                    <div class="course-content">
-
-                        <h2>Segurança na Prática</h2>
-
-                        <div class="details">
-
-                            <p class="detail">
-                                <i class="fa-regular fa-clock"></i>
-                                Carga Horária: 32h
-                            </p>
-
-                            <p class="detail">
-                                <i class="fa-solid fa-signal level-bars"></i>
-                                Nível: Básico
-                            </p>
-
-                        </div>
-
-                        <button class="more"
-                            onclick="showCourse('Segurança na Prática')">
-
-                            Saiba mais
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-                </article>
-
-                <!-- CURSO 4 -->
-                <article class="course-card"
-                    data-category="Indústria 4.0"
-                    data-title="Fundamentos da indústria 4.0">
-
-                    <div class="course-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=85"
-                            alt="Equipamentos de uma indústria moderna"
-                        >
-
-                        <span class="category">
-                            <i class="fa-solid fa-industry"></i>
-                            Indústria 4.0
-                        </span>
-
-                    </div>
-
-                    <div class="course-content">
-
-                        <h2>Fundamentos da Indústria 4.0</h2>
-
-                        <div class="details">
-
-                            <p class="detail">
-                                <i class="fa-regular fa-clock"></i>
-                                Carga Horária: 24h
-                            </p>
-
-                            <p class="detail">
-                                <i class="fa-solid fa-signal level-bars"></i>
-                                Nível: Básico
-                            </p>
-
-                        </div>
-
-                        <button class="more"
-                            onclick="showCourse('Fundamentos da Indústria 4.0')">
-
-                            Saiba mais
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </button>
-
-                    </div>
-                </article>
-
-                <!-- MENSAGEM QUANDO NÃO ENCONTRAR CURSOS -->
-                <p class="empty" id="emptyMessage">
-                    Nenhum curso encontrado. Tente outro termo ou categoria.
-                </p>
-
-            </section>
-
-        </main>
-
-        <footer>
-            Senac + Garoto | Transformando conhecimento em opo
-        </footer>
-
+               <div class="course-content">
+         <h2>Introdução à tecnologia e sistemas industriais</h2>
+          <p><i class="fa-regular fa-clock"></i> Carga horária: 20h</p>
+         <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+        <a href="introdução_a_tecnologia.html" class="more">
+        Saiba mais
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+</div>
+            </article>
+
+            <!-- CURSO 2 -->
+            <article class="course-card" data-category="Automação">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?w=700" alt="Braço robótico industrial">
+                    <span class="category">Automação</span>
+                </div>
+                <div class="course-content">
+                    <h2>Automação na prática</h2>
+                    <p><i class="fa-regular fa-clock"></i> Carga horária: 32h</p>
+                    <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+                    <button class="more" data-title="Automação na prática">Saiba mais <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- CURSO 3 -->
+            <article class="course-card" data-category="Segurança">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=700" alt="Segurança no ambiente industrial">
+                    <span class="category">Segurança</span>
+                </div>
+                <div class="course-content">
+                    <h2>Segurança no ambiente industrial</h2>
+                    <p><i class="fa-regular fa-clock"></i> Carga horária: 32h</p>
+                    <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+                    <button class="more" data-title="Segurança no ambiente industrial">Saiba mais <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- CURSO 4 -->
+            <article class="course-card" data-category="Indústria 4.0">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700" alt="Indústria moderna">
+                    <span class="category">Indústria 4.0</span>
+                </div>
+                <div class="course-content">
+                    <h2>Fundamentos da Indústria 4.0</h2>
+                    <p><i class="fa-regular fa-clock"></i> Carga horária: 24h</p>
+                    <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+                    <button class="more" data-title="Fundamentos da Indústria 4.0">Saiba mais <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- CURSO 5 -->
+            <article class="course-card" data-category="Alimentos">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=700" alt="Produção de chocolates">
+                    <span class="category">Alimentos</span>
+                </div>
+                <div class="course-content">
+                    <h2>Produção e fabricação de chocolates</h2>
+                    <p><i class="fa-regular fa-clock"></i> Carga horária: 30h</p>
+                    <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+                    <button class="more" data-title="Produção e fabricação de chocolates">Saiba mais <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- CURSO 6 -->
+            <article class="course-card" data-category="Alimentos">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700" alt="Preparação de alimentos">
+                    <span class="category">Alimentos</span>
+                </div>
+                <div class="course-content">
+                    <h2>Boas práticas na fabricação de alimentos</h2>
+                    <p><i class="fa-regular fa-clock"></i> Carga horária: 20h</p>
+                    <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+                    <button class="more" data-title="Boas práticas na fabricação de alimentos">Saiba mais <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- CURSO 7 -->
+            <article class="course-card" data-category="Tecnologia">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700" alt="Organização de estoque">
+                    <span class="category">Tecnologia</span>
+                </div>
+                <div class="course-content">
+                    <h2>Logística e controle de estoque</h2>
+                    <p><i class="fa-regular fa-clock"></i> Carga horária: 24h</p>
+                    <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+                    <button class="more" data-title="Logística e controle de estoque">Saiba mais <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- CURSO 8 -->
+            <article class="course-card" data-category="Indústria 4.0">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700" alt="Gestão e organização">
+                    <span class="category">Indústria 4.0</span>
+                </div>
+                <div class="course-content">
+                    <h2>Gestão da qualidade na indústria</h2>
+                    <p><i class="fa-regular fa-clock"></i> Carga horária: 24h</p>
+                    <p><i class="fa-solid fa-signal"></i> Nível: Básico</p>
+                    <button class="more" data-title="Gestão da qualidade na indústria">Saiba mais <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+        </section>
+
+        <p class="empty" id="emptyMessage">
+            Nenhum curso encontrado. Tente outra pesquisa.
+        </p>
+
+    </main>
+
+    <!-- MODAL DE INFORMAÇÕES -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <span class="eyebrow">Conheça o curso</span>
+            <h2 id="modalTitle"></h2>
+            <p>Este curso foi pensado para desenvolver conhecimentos e habilidades importantes para o ambiente industrial.</p>
+            <p>Conteúdo com atividades práticas e aprendizado aplicado.</p>
+            <button class="modal-button" id="modalCloseButton">Entendi</button>
+        </div>
     </div>
 
-    <!-- JAVASCRIPT -->
-    <script src="js/script.js"></script>
+    <!-- RODAPÉ -->
+   <footer>
+    <p>© 2026 Senac + Garoto</p>
+    <span>Transformando conhecimento em oportunidades.</span>
+    <small>Educação, inovação e desenvolvimento para o futuro.</small>
+</footer>
+
+</div>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
