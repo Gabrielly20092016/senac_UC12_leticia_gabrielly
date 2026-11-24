@@ -6,96 +6,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Senac + Garoto</title>
+    <title>Programa Senac e Garoto</title>
 
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <main class="site">
+    <main class="inicio">
 
-        <!-- CABEÇALHO -->
-        <header>
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
 
             <div class="logos">
-                <div class="senac">Senac</div>
-                <div class="divisor"></div>
-                <div class="garoto">Garoto</div>
+                <img src="img/senac_logo.ong.webp" alt="Logo Senac">
+
+                <span class="separador"></span>
+
+                <img src="img/Logo_de_Chocolates_Garoto.png" alt="Logo Garoto">
             </div>
 
-            <nav>
-                <a href="#">Início</a>
-                <a href="#">Sobre o programa</a>
-                <a href="cursos_disponiveis.html">Cursos</a>
-                <a href="#">Benefícios</a>
-                <a href="#">Contato</a>
-            </nav>
+            <button class="menu" aria-label="Abrir menu">
+                ☰
+            </button>
 
         </header>
 
-        <!-- CONTEÚDO PRINCIPAL -->
-        <section class="hero">
+        <!-- Conteúdo principal -->
+        <section class="conteudo">
 
-            <div class="conteudo">
+            <div class="texto">
+
+                <span class="subtitulo">PROGRAMA DE CAPACITAÇÃO</span>
 
                 <h1>
-                    Juntos pelo<br>
-                    desenvolvimento<br>
-                    <span>de quem faz a nossa<br>
-                    história</span>
+                    Juntos pelo desenvolvimento de quem faz
+                    <span>a nossa história.</span>
                 </h1>
 
-                <p class="descricao">
-                    O programa de capacitação profissional
-                    para os funcionários da Chocolates Garoto,
-                    em parceria com o Senac-ES.
-
+                <p>
+                    Programa de capacitação profissional para os funcionários
+                    da Chocolates Garoto, em parceria com o Senac.
                 </p>
-              <a href="cursos_disponiveis.html" class="botao">
-         Conheça os cursos →
-                     </a>
+
+                <a href="#sobre" class="botao">
+                    Conheça o programa
+                    <span>→</span>
+                </a>
 
             </div>
 
-            <!-- IMAGEM -->
-            <div class="imagem-area">
+            <div class="imagem">
 
                 <img
-                    src="../senac_garoto_UC12/img/funcionaria.png"
-                    alt="Funcionária da Chocolates Garoto"
-                    class="funcionaria"
+                    src="img/funcionaria.png"
+                    alt="Profissional trabalhando na indústria"
                 >
 
             </div>
 
-            <!-- BENEFÍCIOS -->
-            <div class="beneficios">
-
-                <div class="beneficio">
-                    <span class="icone">♧</span>
-                    <span>Capacitação<br>profissional</span>
-                </div>
-
-                <div class="beneficio">
-                    <span class="icone">♙</span>
-                    <span>Novos<br>conhecimentos</span>
-                </div>
-
-                <div class="beneficio">
-                    <span class="icone">▥</span>
-                    <span>Preparação para<br>a Indústria 4.0</span>
-                </div>
-
-            </div>
-
-            <!-- DECORAÇÕES -->
-            <div class="onda"></div>
-            <div class="linha"></div>
-
         </section>
 
+        <!-- Elementos decorativos -->
+        <div class="decoracao decoracao-1"></div>
+        <div class="decoracao decoracao-2"></div>
+
     </main>
+
+    <!-- Seção de apresentação -->
+    <section class="sobre" id="sobre">
+
+        <span>SAIBA MAIS</span>
+
+        <h2>Seu desenvolvimento começa aqui!</h2>
+
+        <p>
+            Conheça as oportunidades de capacitação profissional
+            oferecidas pelo programa Senac e Garoto.
+        </p>
+
+    </section>
+
+    <script src="js/script.js"></script>
 
 </body>
 </html>
