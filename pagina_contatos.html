@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre em Contato</title>
+    <link rel="stylesheet" href="CSS/contatos.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+<a href="cursos_disponiveis.html">  
+        <img src="../senac_UC12_leticia_gabrielly/img/voltar.png" class="Voltar">
+</a>
+        <div class="logo">
+            <img src="../senac_UC12_leticia_gabrielly/img/logotipo_senac_garoto.png" alt="Logo Senac e Garoto">
+        </div>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cursos_disponiveis.html">Cursos</a>
+            <a href="pagina_duvidas.html">Dúvidas</a>
+            <a href="pagina_contatos.html" class="ativo">Contatos</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="banner">
+
+            <div class="banner-conteudo">
+
+                <span class="subtitulo">NOSSO ATENDIMENTO</span>
+
+                <h1>Estamos prontos para ouvir você.</h1>
+
+                <p>
+                    Quer saber mais sobre nossos cursos, compartilhar uma
+                    sugestão ou conversar com nossa equipe? Estamos aqui
+                    para ajudar.
+                </p>
+
+                <a href="#formulario" class="botao-banner">
+                    Fale com a gente
+                    <span>→</span>
+                </a>
+
+            </div>
+
+            <div class="banner-detalhe">
+                <div class="circulo circulo-1"></div>
+                <div class="circulo circulo-2"></div>
+
+                <div class="mensagem-banner">
+                    <span> SUA VOZ IMPORTA </span>
+                    <h2>Conte conosco!</h2>
+                    <p>Estamos disponíveis para atender você.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CANAIS DE ATENDIMENTO -->
+        <section class="canais">
+
+            <div class="titulo-canais">
+                <span>FALE CONOSCO</span>
+                <h2>Encontre nosso atendimento</h2>
+                <p>Veja os canais disponíveis para entrar em contato.</p>
+            </div>
+
+            <div class="lista-canais">
+
+                <div class="canal">
+                    <div class="canal-numero">01</div>
+                    <div>
+                        <h3>Telefone</h3>
+                        <p>Converse diretamente com nossa equipe.</p>
+                        <strong>(00) 0000-0000</strong>
+                    </div>
+                </div>
+
+                <div class="canal">
+                    <div class="canal-numero">02</div>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>Entre em contato de maneira rápida.</p>
+                        <strong>(00) 00000-0000</strong>
+                    </div>
+                </div>
+
+                <div class="canal">
+                    <div class="canal-numero">03</div>
+                    <div>
+                        <h3>Endereço</h3>
+                        <p>Consulte onde estamos localizados.</p>
+                        <strong>Insira o endereço da unidade</strong>
+                    </div>
+                </div>
+
+                <div class="canal">
+                    <div class="canal-numero">04</div>
+                    <div>
+                        <h3>Horário de atendimento</h3>
+                        <p>Confira quando nossa equipe está disponível.</p>
+                        <strong>Segunda a sexta-feira</strong>
+                        <small>Insira os horários oficiais</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FORMULÁRIO DE CONTATO -->
+        <section class="formulario-area" id="formulario">
+
+            <div class="formulario-texto">
+
+                <span>VAMOS CONVERSAR?</span>
+
+                <h2>Tem algo para nos contar?</h2>
+
+                <p>
+                    Preencha o formulário e deixe sua mensagem.
+                    Queremos conhecer sua necessidade e entender
+                    como podemos ajudar.
+                </p>
+
+                <div class="frase-destaque">
+                    <span>“</span>
+                    <p>
+                        Um bom atendimento começa com uma boa conversa.
+                    </p>
+                </div>
+
+            </div>
+
+            <form id="formContato">
+
+                <h3>Envie sua mensagem</h3>
+                <p class="descricao-form">Preencha as informações abaixo.</p>
+
+                <div class="campo">
+                    <label for="nome">Seu nome</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Como podemos chamar você?"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone para contato</label>
+                    <input
+                        type="tel"
+                        id="telefone"
+                        placeholder="(00) 00000-0000"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Motivo do contato</label>
+
+                    <select id="assunto" required>
+                        <option value="">Escolha uma opção</option>
+                        <option value="Informações sobre cursos">Informações sobre cursos</option>
+                        <option value="Atendimento">Atendimento</option>
+                        <option value="Sugestão">Sugestão</option>
+                        <option value="Reclamação">Reclamação</option>
+                        <option value="Parcerias">Parcerias</option>
+                        <option value="Outros">Outros assuntos</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+
+                    <textarea
+                        id="mensagem"
+                        rows="5"
+                        placeholder="Escreva aqui o que deseja nos contar..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="botao-enviar">
+                    Enviar mensagem →
+                </button>
+
+                <p id="mensagemSucesso" class="sucesso" hidden></p>
+
+            </form>
+
+        </section>
+
+        <!-- INFORMAÇÃO FINAL -->
+        <section class="final-contato">
+
+            <div>
+                <h2>Estamos à disposição!</h2>
+                <p>
+                    Sua participação é importante para melhorar
+                    cada vez mais nossa experiência.
+                </p>
+            </div>
+
+            <a href="#formulario">Entre em contato →</a>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-conteudo">
+            <div>
+                <h3>Senac + Garoto</h3>
+                <p>Aprendizado, conhecimento e novas oportunidades.</p>
+            </div>
+
+            <p class="copyright">
+                © 2026 - Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/contatos.js"></script>
+
+</body>
+</html>

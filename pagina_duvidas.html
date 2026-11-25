@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Dúvidas</title>
+    <link rel="stylesheet" href="CSS/duvidas.css">
+</head>
+<body>
+    <header class="cabecalho">
+
+        <div class="logo">
+           <a href="cursos_disponiveis.html">
+            <img src="../senac_UC12_leticia_gabrielly/img/seta.png" class="voltar" >
+        </a>
+            
+            <img src="../senac_UC12_leticia_gabrielly/img/logotipo_senac_garoto.png" alt="Logo">
+
+         <div class="frase-cabecalho">
+        <h3>Aprender é descobrir novas possibilidades.</h3>
+      <p>Explore conteúdos, aprenda e tire suas dúvidas.</p>
+     </div>
+
+        </div>
+
+
+        <nav>
+            <a href="../senac_UC12_leticia_gabrielly/index.html">Início</a>
+            <a href="#perguntas">Perguntas frequentes</a>
+            <a href="#minhas-duvidas">Minhas dúvidas</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="introducao">
+            <h1>Central de dúvidas</h1>
+            <p>
+                Encontre respostas para suas perguntas ou registre
+                uma nova dúvida.
+            </p>
+        </section>
+
+        <!-- PERGUNTAS FREQUENTES -->
+        <section class="secao" id="perguntas">
+
+            <div class="titulo-secao">
+                <h2>Perguntas frequentes</h2>
+                <p>Consulte as respostas para as dúvidas mais comuns.</p>
+            </div>
+
+            <div class="pesquisa">
+                <input
+                    type="text"
+                    id="pesquisaPergunta"
+                    placeholder="Pesquisar uma dúvida..."
+                >
+            </div>
+
+            <div class="categorias">
+                <button class="categoria ativa" data-categoria="Todas">
+                    Todas
+                </button>
+
+                <button class="categoria" data-categoria="Cursos">
+                    Cursos
+                </button>
+
+                <button class="categoria" data-categoria="Plataforma">
+                    Plataforma
+                </button>
+
+                <button class="categoria" data-categoria="Certificados">
+                    Certificados
+                </button>
+
+                <button class="categoria" data-categoria="Outros">
+                    Outros
+                </button>
+            </div>
+
+            <div class="lista-perguntas">
+
+                <div class="pergunta" data-categoria="Cursos">
+                    <button class="pergunta-titulo">
+                        Como faço para acessar um curso?
+                        <span>+</span>
+                    </button>
+                    <div class="resposta">
+                        <p>
+                            Acesse a área de cursos, escolha o curso desejado
+                            e clique na opção para visualizar o conteúdo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pergunta" data-categoria="Cursos">
+                    <button class="pergunta-titulo">
+                        Posso fazer mais de um curso?
+                        <span>+</span>
+                    </button>
+                    <div class="resposta">
+                        <p>
+                            Sim. Você pode acessar os cursos disponíveis
+                            e escolher aqueles que deseja realizar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pergunta" data-categoria="Plataforma">
+                    <button class="pergunta-titulo">
+                        Como faço para acessar a plataforma?
+                        <span>+</span>
+                    </button>
+                    <div class="resposta">
+                        <p>
+                            Entre na página inicial da plataforma e utilize
+                            as opções de navegação para acessar os conteúdos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pergunta" data-categoria="Certificados">
+                    <button class="pergunta-titulo">
+                        Como consigo meu certificado?
+                        <span>+</span>
+                    </button>
+                    <div class="resposta">
+                        <p>
+                            Após concluir todas as etapas e atividades
+                            obrigatórias do curso, verifique se a opção
+                            de certificado está disponível.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pergunta" data-categoria="Outros">
+                    <button class="pergunta-titulo">
+                        O que faço se encontrar um erro?
+                        <span>+</span>
+                    </button>
+                    <div class="resposta">
+                        <p>
+                            Registre sua dúvida no formulário abaixo,
+                            explicando o que aconteceu para que a situação
+                            possa ser analisada.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <p id="nenhumaPergunta" class="mensagem-vazia" hidden>
+                Nenhuma pergunta encontrada.
+            </p>
+
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section class="secao formulario-secao" id="registrar-duvida">
+
+            <div class="titulo-secao">
+                <h2>Ainda precisa de ajuda?</h2>
+                <p>Preencha os campos abaixo para registrar sua dúvida.</p>
+            </div>
+
+            <form id="formDuvida">
+
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Cursos">Cursos</option>
+                        <option value="Plataforma">Plataforma</option>
+                        <option value="Certificados">Certificados</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Assunto</label>
+                    <input
+                        type="text"
+                        id="assunto"
+                        placeholder="Digite o assunto da dúvida"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Descreva sua dúvida</label>
+                    <textarea
+                        id="mensagem"
+                        rows="5"
+                        placeholder="Explique sua dúvida com detalhes..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="botao-enviar">
+                    Registrar dúvida
+                </button>
+
+                <p id="mensagemSucesso" class="sucesso" hidden>
+                    Sua dúvida foi registrada com sucesso!
+                </p>
+
+            </form>
+
+        </section>
+
+        <!-- MINHAS DÚVIDAS -->
+        <section class="secao minhas-duvidas" id="minhas-duvidas">
+
+            <div class="titulo-secao">
+                <h2>Minhas dúvidas</h2>
+                <p>Acompanhe as dúvidas que você registrou.</p>
+            </div>
+
+            <div id="listaMinhasDuvidas">
+
+                <p class="mensagem-vazia">
+                    Você ainda não registrou nenhuma dúvida.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Central de Dúvidas</p>
+    </footer>
+
+    <script src="js/duvidas.js"></script>
+</body>
+</html>

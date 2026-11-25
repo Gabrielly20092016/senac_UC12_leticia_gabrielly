@@ -1,407 +1,355 @@
 
-// Seleciona todos os links da página
-const links = document.querySelectorAll('a[href^="#"]');
+/* ========================================
+   ESTILIZAÇÃO DA PÁGINA DO CURSOS DISPONIVEIS 
+======================================== */
 
-// Adiciona o evento de clique
-links.forEach(link => {
 
-    link.addEventListener('click', function (evento) {
+// ELEMENTOS DA PÁGINA
 
-        const destino = document.querySelector(this.getAttribute('href'));
+const searchInput = document.getElementById("searchInput");
+const filters = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".course-card");
+const emptyMessage = document.getElementById("emptyMessage");
 
-        if (destino) {
-            evento.preventDefault();
+const modal = document.getElementById("courseModal");
+const modalTitle = document.getElementById("modalTitle");
 
-            destino.scrollIntoView({
-                behavior: 'smooth'
-            });
+// FILTRO SELECIONADO
+
+let selectedFilter = "Todos";
+
+// FUNÇÃO DE PESQUISA E FILTRAGEM
+
+function filterCourses() {
+
+    const search = searchInput.value.toLowerCase();
+    let visibleCourses = 0;
+
+    cards.forEach(card => {
+
+        const title = card.querySelector("h2").textContent.toLowerCase();
+        const category = card.dataset.category;
+
+        const matchesSearch = title.includes(search);
+
+        const matchesFilter =
+            selectedFilter === "Todos" ||
+            category === selectedFilter;
+
+        if (matchesSearch && matchesFilter) {
+            card.style.display = "block";
+            visibleCourses++;
+        } else {
+            card.style.display = "none";
         }
+
+    });
+
+    // MOSTRA MENSAGEM SE NÃO ENCONTRAR CURSOS
+
+    emptyMessage.style.display =
+        visibleCourses === 0 ? "block" : "none";
+}
+
+// EVENTO DA BARRA DE PESQUISA
+
+searchInput.addEventListener("input", filterCourses);
+
+// EVENTO DOS BOTÕES DE FILTRO
+
+filters.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filters.forEach(filter => {
+            filter.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        selectedFilter = button.dataset.filter;
+
+        filterCourses();
 
     });
 
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// ABRIR INFORMAÇÕES DO CURSO
 
-    // Elementos da página
-    const lessonButtons = [
-        ...document.querySelectorAll(".complete-btn")
-    ];
+document.querySelectorAll(".more").forEach(button => {
 
-    const progressBar = document.getElementById("progressBar");
-    const progressText = document.getElementById("progressText");
-    const progressDetail = document.getElementById("progressDetail");
+    button.addEventListener("click", () => {
 
-    const quizForm = document.getElementById("quizForm");
-    const examForm = document.getElementById("examForm");
+        modalTitle.textContent = button.dataset.title;
 
-    const quizResult = document.getElementById("quizResult");
-    const examResult = document.getElementById("examResult");
-
-    const certificateButton = document.getElementById("certificateButton");
-    const certificateMessage = document.getElementById("certificateMessage");
-
-    let quizPassed = false;
-    let examPassed = false;
-
-    // Guarda as aulas concluídas
-    const completed = new Set();
-
-    function updateProgress() {
-
-        const percent = Math.round(
-            (completed.size / lessonButtons.length) * 100
-        );
-
-        progressBar.style.width = percent + "%";
-
-        progressText.textContent =
-            percent + "% concluído";
-
-        progressDetail.textContent =
-            `${completed.size} de ${lessonButtons.length} aulas concluídas`;
-
-        updateCertificate();
-    }
-
-    lessonButtons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const id = button.dataset.lesson;
-
-            if (completed.has(id)) {
-
-                // Desmarcar aula
-                completed.delete(id);
-
-                button.classList.remove("done");
-
-                button.textContent =
-                    "Marcar aula como concluída";
-
-            } else {
-
-                // Marcar aula como concluída
-                completed.add(id);
-
-                button.classList.add("done");
-
-                button.textContent =
-                    "✓ Aula concluída";
-            }
-
-            updateProgress();
-
-        });
+        modal.classList.add("show");
 
     });
-
-    function grade(
-        form,
-        prefix,
-        answers,
-        minimum,
-        resultElement,
-        type
-    ) {
-
-        const data = new FormData(form);
-
-        let score = 0;
-        let unanswered = [];
-
-        // Conferir cada resposta
-        answers.forEach((answer, index) => {
-
-            const key = prefix + (index + 1);
-
-            if (!data.get(key)) {
-
-                unanswered.push(index + 1);
-
-            } else if (data.get(key) === answer) {
-
-                score++;
-            }
-
-        });
-
-
-        // Verificar questões sem resposta
-        if (unanswered.length) {
-
-            resultElement.textContent =
-                "Responda todas as questões antes de enviar.";
-
-            resultElement.style.color = "#b45309";
-
-            return;
-        }
-
-
-        // Verificar aprovação
-        const passed = score >= minimum;
-
-        resultElement.textContent =
-            `Você acertou ${score} de ${answers.length} questões. ${
-                passed
-                    ? "Parabéns, etapa concluída!"
-                    : "Revise o conteúdo e tente novamente."
-            }`;
-
-        resultElement.style.color =
-            passed ? "#23834a" : "#b42318";
-
-
-        // Atualizar situação das avaliações
-        if (type === "quiz") {
-            quizPassed = passed;
-        }
-
-        if (type === "exam") {
-            examPassed = passed;
-        }
-
-        updateCertificate();
-    }
-
-    quizForm.addEventListener("submit", event => {
-
-        event.preventDefault();
-
-        grade(
-            quizForm,
-            "q",
-            quizAnswers,
-            3,
-            quizResult,
-            "quiz"
-        );
-
-    });
-
-    examForm.addEventListener("submit", event => {
-
-        event.preventDefault();
-
-        grade(
-            examForm,
-            "p",
-            examAnswers,
-            4,
-            examResult,
-            "exam"
-        );
-
-    });
-
-    function updateCertificate() {
-
-        const ready =
-            completed.size === lessonButtons.length &&
-            quizPassed &&
-            examPassed;
-
-        certificateButton.disabled = !ready;
-
-        certificateMessage.textContent = ready
-
-            ? "Parabéns! Você concluiu as aulas e foi aprovado nas avaliações. Seu certificado demonstrativo está liberado."
-
-            : "Conclua os três módulos, seja aprovado no quiz e na prova final para liberar seu certificado demonstrativo.";
-    }
-
-    certificateButton.addEventListener("click", () => {
-
-        if (certificateButton.disabled) return;
-
-        const courseTitle =
-            document.querySelector("h1").textContent;
-
-        const win = window.open("", "_blank");
-
-        if (!win) {
-
-            alert(
-                "Permita a abertura de janelas para visualizar o certificado."
-            );
-
-            return;
-        }
-
-
-        // Conteúdo do certificado
-        win.document.write(`
-
-            <!DOCTYPE html>
-
-            <html lang="pt-BR">
-
-            <head>
-
-                <meta charset="UTF-8">
-
-                <title>Certificado demonstrativo</title>
-
-                <style>
-
-                    body {
-                        font-family: Arial, sans-serif;
-                        background: #f5f2fa;
-                        padding: 35px;
-                        color: #30204e;
-                    }
-
-                    .certificate {
-                        max-width: 850px;
-                        margin: 35px auto;
-                        background: white;
-                        border: 10px double #6b20d7;
-                        padding: 55px;
-                        text-align: center;
-                    }
-
-                    h1 {
-                        color: #5b19c9;
-                        font-size: 38px;
-                    }
-
-                    h2 {
-                        font-size: 25px;
-                        margin: 35px 0 12px;
-                    }
-
-                    p {
-                        line-height: 1.8;
-                    }
-
-                    .name {
-                        font-size: 25px;
-                        font-weight: bold;
-                        border-bottom: 1px solid #aaa;
-                        display: inline-block;
-                        padding: 10px 50px;
-                        margin: 18px;
-                    }
-
-                    small {
-                        display: block;
-                        margin-top: 35px;
-                        color: #777;
-                    }
-
-                    @media print {
-
-                        body {
-                            background: white;
-                            padding: 0;
-                        }
-
-                        .certificate {
-                            margin: 0;
-                            min-height: 80vh;
-                        }
-
-                    }
-
-                </style>
-
-            </head>
-
-            <body>
-
-                <main class="certificate">
-
-                    <p>
-                        <strong>SENAC + GAROTO</strong>
-                    </p>
-
-                    <h1>Certificado de conclusão</h1>
-
-                    <p>Certificamos que</p>
-
-                    <div class="name">
-                        Participante do curso
-                    </div>
-
-                    <p>concluiu o curso demonstrativo</p>
-
-                    <h2>${courseTitle}</h2>
-
-                    <p>
-                        com aproveitamento nas atividades
-                        e avaliações propostas.
-                    </p>
-
-                    <small>
-                        Certificado demonstrativo — sem validade oficial.
-                    </small>
-
-                    <p>
-                        <button onclick="window.print()">
-                            Imprimir certificado
-                        </button>
-                    </p>
-
-                </main>
-
-            </body>
-
-            </html>
-
-        `);
-
-        win.document.close();
-
-    });
-
-    updateProgress();
 
 });
 
-const answerKeys = {
+// FECHAR MODAL
 
-    "1": {
+function closeModal() {
+    modal.classList.remove("show");
+}
 
-        quiz: ["b", "a", "c", "b"],
+document.getElementById("closeModal")
+    .addEventListener("click", closeModal);
 
-        exam: ["a", "b", "c", "a", "b"]
+document.getElementById("modalCloseButton")
+    .addEventListener("click", closeModal);
 
-    },
+// FECHAR AO CLICAR FORA DA JANELA
 
-    "2": {
-
-        quiz: ["b", "a", "c", "b"],
-
-        exam: ["a", "b", "c", "a", "b"]
-
-    },
-
-    "3": {
-
-        quiz: ["a", "b", "c", "a"],
-
-        exam: ["b", "c", "a", "b", "c"]
-
-    },
-
-    "4": {
-
-        quiz: ["b", "c", "a", "b"],
-
-        exam: ["a", "b", "c", "a", "b"]
-
+modal.addEventListener("click", event => {
+    if (event.target === modal) {
+        closeModal();
     }
+});
 
+// TERMINA AQUI O JAVA DA PAGINA DE CURSOS DISPONIVEIS
+
+
+
+/* ========================================
+   ESTILIZAÇÃO DA PÁGINA DO CURSO INTRODUÇÃO A TECNOLOGIA
+======================================== */
+
+
+const botoesAulas = document.querySelectorAll(".botao-concluir");
+
+const barraProgresso = document.getElementById("barraProgresso");
+const textoProgresso = document.getElementById("textoProgresso");
+const statusCurso = document.getElementById("statusCurso");
+
+const formQuiz = document.getElementById("formQuiz");
+const formProva = document.getElementById("formProva");
+
+const contadorQuiz = document.getElementById("contadorQuiz");
+const contadorProva = document.getElementById("contadorProva");
+
+const estadoQuiz = document.getElementById("estadoQuiz");
+const estadoProva = document.getElementById("estadoProva");
+
+const resultadoQuiz = document.getElementById("resultadoQuiz");
+const resultadoProva = document.getElementById("resultadoProva");
+
+const botaoCertificado = document.getElementById("acessarCertificado");
+const mensagemCertificado = document.getElementById("mensagemCertificado");
+
+const modulosConcluidos = new Set();
+
+let quizAprovado = false;
+let provaAprovada = false;
+
+const respostasQuiz = {
+    q1: "b",
+    q2: "b",
+    q3: "c",
+    q4: "b",
+    q5: "c",
+    q6: "a"
 };
 
+const respostasProva = {
+    p1: "b",
+    p2: "b",
+    p3: "b",
+    p4: "b",
+    p5: "c"
+};
 
-// Identificar qual curso está aberto
-const courseKey = document.body.dataset.course;
+// ATUALIZAR PROGRESSO
 
+function atualizarProgresso() {
+    const totalEtapas = 5;
 
-// Selecionar os gabaritos correspondentes
-const quizAnswers = answerKeys[courseKey].quiz;
+    const etapasConcluidas =
+        modulosConcluidos.size +
+        (quizAprovado ? 1 : 0) +
+        (provaAprovada ? 1 : 0);
 
-const examAnswers = answerKeys[courseKey].exam;
+    const porcentagem = Math.round(
+        (etapasConcluidas / totalEtapas) * 100
+    );
+
+    barraProgresso.style.width = porcentagem + "%";
+    textoProgresso.textContent = porcentagem + "% concluído";
+
+    if (porcentagem === 100) {
+        statusCurso.textContent = "Parabéns! Você concluiu todas as etapas.";
+    } else {
+        statusCurso.textContent =
+            `${etapasConcluidas} de ${totalEtapas} etapas concluídas.`;
+    }
+
+    atualizarCertificado();
+}
+
+// CONCLUIR MÓDULOS
+
+botoesAulas.forEach(botao => {
+    botao.addEventListener("click", () => {
+        const numeroAula = botao.dataset.aula;
+
+        modulosConcluidos.add(numeroAula);
+
+        botao.textContent = "Módulo concluído ✓";
+        botao.classList.add("concluido");
+        botao.disabled = true;
+
+        const status = document.getElementById(
+            `statusAula${numeroAula}`
+        );
+
+        status.textContent = "Módulo concluído!";
+        status.style.color = "#198754";
+
+        atualizarProgresso();
+    });
+});
+
+// CONTAR QUESTÕES RESPONDIDAS
+
+function contarRespostas(formulario, total, contador) {
+    const perguntas = formulario.querySelectorAll(
+        'input[type="radio"]:checked'
+    );
+
+    contador.textContent =
+        `${perguntas.length} de ${total} questões respondidas`;
+}
+
+formQuiz.addEventListener("change", () => {
+    contarRespostas(formQuiz, 6, contadorQuiz);
+});
+
+formProva.addEventListener("change", () => {
+    contarRespostas(formProva, 5, contadorProva);
+});
+
+// CORRIGIR AVALIAÇÃO
+
+function corrigirAvaliacao(formulario, respostas, total, resultado) {
+    let acertos = 0;
+    let questoesCorrigidas = "";
+
+    for (const pergunta in respostas) {
+        const marcada = formulario.querySelector(
+            `input[name="${pergunta}"]:checked`
+        );
+
+        if (!marcada) {
+            resultado.textContent =
+                "Responda todas as questões antes de finalizar.";
+
+            return null;
+        }
+
+        const correta = respostas[pergunta];
+
+        if (marcada.value === correta) {
+            acertos++;
+            questoesCorrigidas +=
+                `<p>Questão ${pergunta.slice(1)}: correta ✓</p>`;
+        } else {
+            questoesCorrigidas +=
+                `<p>Questão ${pergunta.slice(1)}: incorreta. Resposta correta: ${correta.toUpperCase()}.</p>`;
+        }
+    }
+
+    resultado.innerHTML = `
+        <strong>Resultado: ${acertos} de ${total} acertos.</strong>
+        <div class="correcao">
+            ${questoesCorrigidas}
+        </div>
+    `;
+
+    return acertos;
+}
+
+// QUIZ
+
+formQuiz.addEventListener("submit", evento => {
+    evento.preventDefault();
+
+    const acertos = corrigirAvaliacao(
+        formQuiz,
+        respostasQuiz,
+        6,
+        resultadoQuiz
+    );
+
+    if (acertos === null) return;
+
+    quizAprovado = acertos >= 5;
+
+    if (quizAprovado) {
+        estadoQuiz.textContent = "Aprovado ✓";
+    } else {
+        estadoQuiz.textContent = "Não aprovado";
+    }
+
+    resultadoQuiz.innerHTML += quizAprovado
+        ? "<p><strong>Parabéns! Você foi aprovado no quiz.</strong></p>"
+        : "<p><strong>Você precisa acertar pelo menos 5 questões. Tente novamente.</strong></p>";
+
+    atualizarProgresso();
+});
+
+// PROVA FINAL
+
+formProva.addEventListener("submit", evento => {
+    evento.preventDefault();
+
+    const acertos = corrigirAvaliacao(
+        formProva,
+        respostasProva,
+        5,
+        resultadoProva
+    );
+
+    if (acertos === null) return;
+
+    provaAprovada = acertos >= 4;
+
+    if (provaAprovada) {
+        estadoProva.textContent = "Aprovado ✓";
+    } else {
+        estadoProva.textContent = "Não aprovado";
+    }
+
+    resultadoProva.innerHTML += provaAprovada
+        ? "<p><strong>Parabéns! Você foi aprovado na prova final.</strong></p>"
+        : "<p><strong>Você precisa acertar pelo menos 4 questões. Tente novamente.</strong></p>";
+
+    atualizarProgresso();
+});
+
+// LIBERAR CERTIFICADO
+
+function atualizarCertificado() {
+    const cursoConcluido =
+        modulosConcluidos.size === 3 &&
+        quizAprovado &&
+        provaAprovada;
+
+    botaoCertificado.disabled = !cursoConcluido;
+
+    if (cursoConcluido) {
+        mensagemCertificado.textContent =
+            "Parabéns! Você concluiu os três módulos, o quiz e a prova final. Seu certificado demonstrativo está liberado.";
+    }
+}
+
+botaoCertificado.addEventListener("click", () => {
+    if (!botaoCertificado.disabled) {
+        alert("Parabéns! Você concluiu o curso demonstrativo!");
+    }
+});
+
+// INICIAR PROGRESSO
+
+atualizarProgresso();
