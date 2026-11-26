@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Introdução à Tecnologia e Sistemas Industriais</title>
+
+    <link rel="stylesheet" href="CSS/curso_introducao_a_tecnologia.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <div class="logo-area">
+
+            <a href="cursos_disponiveis.html" class="voltar">
+                ←
+            </a>
+
+            <img
+                src="../senac_UC12_leticia_gabrielly/img/logotipo_senac_garoto.png"
+                alt="Logotipo Senac e Garoto"
+            >
+
+        </div>
+
+        <nav>
+            <a href="../senac_UC12_leticia_gabrielly/index.html">
+                Início
+            </a>
+
+            <a href="#modulos">
+                Conteúdo do curso
+            </a>
+
+            <a href="#progresso">
+                Meu progresso
+            </a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+        <section class="apresentacao">
+
+            <div class="apresentacao-texto">
+
+                <span class="etiqueta">
+                    CURSO DE FORMAÇÃO
+                </span>
+
+                <h1>
+                    Introdução à Tecnologia e Sistemas Industriais
+                </h1>
+
+                <p>
+                    Conheça os fundamentos da tecnologia, os sistemas
+                    industriais e as transformações que estão mudando
+                    o funcionamento das indústrias.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>📚 5 módulos</span>
+
+                    <span>⏱ 20 horas</span>
+
+                    <span>📝 Avaliação final</span>
+
+                </div>
+
+            </div>
+
+            <div class="apresentacao-imagem">
+
+                <img
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85"
+                    alt="Tecnologia e equipamentos industriais"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESSO -->
+        <section class="progresso-geral" id="progresso">
+
+            <div class="progresso-topo">
+
+                <div>
+                    <h2>Meu progresso</h2>
+
+                    <p>
+                        Acompanhe sua evolução durante o curso.
+                    </p>
+                </div>
+
+                <strong id="porcentagemGeral">0%</strong>
+
+            </div>
+
+            <div class="barra-fundo">
+                <div
+                    class="barra-preenchimento"
+                    id="barraGeral">
+                </div>
+            </div>
+
+            <div class="progresso-informacoes">
+
+                <span id="modulosConcluidos">
+                    0 de 5 módulos concluídos
+                </span>
+
+                <span id="etapasConcluidas">
+                    0 etapas concluídas
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDO DOS MÓDULOS -->
+        <section class="area-modulos" id="modulos">
+
+            <div class="titulo-principal">
+
+                <span class="etiqueta">
+                    TRILHA DE APRENDIZAGEM
+                </span>
+
+                <h2>Conteúdo do curso</h2>
+
+                <p>
+                    Avance pelos módulos, estude os conteúdos e
+                    complete todas as atividades para continuar.
+                </p>
+
+            </div>
+
+
+            <!-- LISTA DE MÓDULOS -->
+            <div class="lista-modulos" id="listaModulos">
+            </div>
+
+
+            <!-- ÁREA DE ESTUDO -->
+            <section class="area-estudo" id="areaEstudo" hidden>
+
+                <div class="estudo-cabecalho">
+
+                    <button id="voltarModulos" class="botao-voltar">
+                        ← Voltar aos módulos
+                    </button>
+
+                    <span id="identificacaoModulo"></span>
+
+                </div>
+
+
+                <div class="estudo-progresso">
+
+                    <div class="estudo-progresso-texto">
+
+                        <span id="nomeEtapa"></span>
+
+                        <strong id="contadorEtapa"></strong>
+
+                    </div>
+
+                    <div class="barra-fundo">
+                        <div
+                            class="barra-preenchimento"
+                            id="barraEtapa">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- CONTEÚDO DA ETAPA -->
+                <article id="conteudoEtapa" class="conteudo-etapa">
+                </article>
+
+
+                <!-- PERGUNTA DA ETAPA -->
+                <div class="pergunta-etapa" id="perguntaEtapa">
+
+                    <h3>Verifique seu aprendizado</h3>
+
+                    <p id="textoPerguntaEtapa"></p>
+
+                    <div
+                        id="opcoesPerguntaEtapa"
+                        class="opcoes-pergunta">
+                    </div>
+
+                    <p
+                        id="resultadoEtapa"
+                        class="resultado"
+                        aria-live="polite">
+                    </p>
+
+                    <button
+                        id="concluirEtapa"
+                        class="botao-principal"
+                        disabled>
+                        Confirmar resposta
+                    </button>
+
+                </div>
+
+
+                <!-- QUIZ DO MÓDULO -->
+                <section class="quiz-modulo" id="quizModulo" hidden>
+
+                    <span class="etiqueta">
+                        AVALIAÇÃO DO MÓDULO
+                    </span>
+
+                    <h2>Quiz de conhecimentos</h2>
+
+                    <p>
+                        Responda às questões para demonstrar que
+                        compreendeu os conteúdos deste módulo.
+                    </p>
+
+                    <div id="questoesQuiz"></div>
+
+                    <button
+                        id="corrigirQuiz"
+                        class="botao-principal">
+                        Finalizar quiz
+                    </button>
+
+                    <div
+                        id="resultadoQuiz"
+                        class="resultado"
+                        aria-live="polite">
+                    </div>
+
+                </section>
+
+            </section>
+
+        </section>
+
+
+        <!-- CONCLUSÃO E PROVA FINAL -->
+        <section
+            class="conclusao-curso"
+            id="conclusaoCurso"
+            hidden>
+
+            <div class="conclusao-conteudo">
+
+                <span class="etiqueta">
+                    ÚLTIMA ETAPA DO CURSO
+                </span>
+
+                <div class="icone-conclusao">
+                    🎓
+                </div>
+
+                <h2>Você concluiu todos os módulos!</h2>
+
+                <p>
+                    Agora é hora de colocar em prática tudo o que
+                    aprendeu. A avaliação final reúne conhecimentos
+                    de todos os módulos estudados.
+                </p>
+
+                <div class="aviso-avaliacao">
+
+                    <div class="aviso-icone">📋</div>
+
+                    <div>
+
+                        <strong>Avaliação final obrigatória</strong>
+
+                        <p>
+                            Para conquistar seu certificado, você
+                            deverá realizar a prova e alcançar
+                            pelo menos 70% de aproveitamento.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    id="iniciarProva"
+                    class="botao-principal">
+                    Iniciar avaliação final
+                </button>
+
+
+                <!-- PROVA -->
+                <div id="areaProva" hidden>
+
+                    <div class="prova-cabecalho">
+
+                        <span class="etiqueta">
+                            AVALIAÇÃO GERAL
+                        </span>
+
+                        <h2>Prova final</h2>
+
+                        <p>
+                            Leia atentamente cada situação e escolha
+                            a alternativa mais adequada.
+                        </p>
+
+                    </div>
+
+                    <div id="questoesProva"></div>
+
+                    <button
+                        id="corrigirProva"
+                        class="botao-principal">
+                        Enviar respostas
+                    </button>
+
+                    <div
+                        id="resultadoProva"
+                        class="resultado"
+                        aria-live="polite">
+                    </div>
+
+                </div>
+
+
+                <!-- CERTIFICADO -->
+                <div id="areaCertificado" hidden>
+
+                    <div class="certificado-conteudo">
+
+                        <span class="etiqueta">
+                            CURSO CONCLUÍDO
+                        </span>
+
+                        <h2>Parabéns pela aprovação!</h2>
+
+                        <p>
+                            Você concluiu os cinco módulos e foi
+                            aprovado na avaliação final.
+                        </p>
+
+                        <label for="nomeCertificado">
+                            Nome completo para o certificado
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nomeCertificado"
+                            placeholder="Digite seu nome completo"
+                        >
+
+                        <button
+                            id="gerarCertificado"
+                            class="botao-principal">
+                            Gerar certificado
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CERTIFICADO PARA IMPRESSÃO -->
+        <section id="certificadoImpresso" hidden>
+
+            <div class="folha-certificado">
+
+                <span class="certificado-marca">
+                    SENAC
+                </span>
+
+                <h1>Certificado de Conclusão</h1>
+
+                <p>Certificamos que</p>
+
+                <h2 id="nomeAlunoImpresso"></h2>
+
+                <p>
+                    concluiu o curso de
+                </p>
+
+                <h2>
+                    Introdução à Tecnologia e Sistemas Industriais
+                </h2>
+
+                <p>
+                    com carga horária prevista de 20 horas,
+                    tendo concluído os cinco módulos e obtido
+                    aprovação na avaliação final.
+                </p>
+
+                <div class="assinatura-certificado">
+                    <span>____________________________</span>
+                    <p>Plataforma de aprendizagem</p>
+                </div>
+
+            </div>
+
+            <button
+                class="botao-principal nao-imprimir"
+                onclick="window.print()">
+                Imprimir certificado
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <p>
+            Introdução à Tecnologia e Sistemas Industriais
+        </p>
+
+        <span>
+            Plataforma de aprendizagem
+        </span>
+
+    </footer>
+
+
+    <script src="js/curso_introducao_a_tecnologia.js"></script>
+
+</body>
+</html>

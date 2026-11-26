@@ -1,0 +1,998 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.cabecalho {
+    width: 100%;
+    min-height: 85px;
+    padding: 15px 6%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
+}
+
+.voltar {
+    color: #54258a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.voltar:hover {
+    color: #8b55c7;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 145px;
+    max-height: 65px;
+    object-fit: contain;
+}
+
+.cabecalho nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cabecalho nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cabecalho nav a:hover {
+    color: #7138a8;
+}
+
+
+/* =====================================
+   APRESENTAÇÃO DO CURSO
+===================================== */
+
+.apresentacao {
+    min-height: 480px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        120deg,
+        #32145f,
+        #63329a,
+        #8654b5
+    );
+    color: #fff;
+}
+
+.apresentacao-conteudo {
+    max-width: 850px;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.17);
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.sobretitulo {
+    margin-top: 25px;
+    margin-bottom: 8px;
+    color: #e1c9ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.apresentacao h1 {
+    margin-bottom: 18px;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+}
+
+.descricao-apresentacao {
+    max-width: 680px;
+    color: #eee4fa;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.informacoes-curso {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.informacoes-curso div {
+    display: flex;
+    flex-direction: column;
+}
+
+.informacoes-curso strong {
+    font-size: 25px;
+}
+
+.informacoes-curso span {
+    color: #e3d5f5;
+    font-size: 13px;
+}
+
+.link-iniciar {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 23px;
+    background: #fff;
+    color: #54258a;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.link-iniciar:hover {
+    background: #eee5f8;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   SEÇÕES GERAIS
+===================================== */
+
+.secao {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 65px 6%;
+}
+
+.cabecalho-secao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.etiqueta-clara {
+    background: #eee5f8;
+    color: #68359b;
+}
+
+.titulo-principal {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.titulo-principal h2,
+.cabecalho-secao h2 {
+    margin-top: 12px;
+    color: #39205b;
+    font-size: 30px;
+}
+
+.titulo-principal p,
+.cabecalho-secao p {
+    margin-top: 8px;
+    color: #777;
+    font-size: 15px;
+}
+
+.icone-progresso {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee5f8;
+    color: #68359b;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   PROGRESSO DO CURSO
+===================================== */
+
+.progresso {
+    margin-top: 35px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.progresso-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.progresso-info strong {
+    color: #7138a8;
+    font-size: 16px;
+}
+
+.barra-fundo {
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e9e2f0;
+}
+
+.barra-preenchida {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #68359b, #a477d2);
+    transition: width 0.4s ease;
+}
+
+.resumo-progresso {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.item-resumo {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-resumo strong {
+    color: #54258a;
+    font-size: 25px;
+}
+
+.item-resumo span {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   LISTA DE MÓDULOS
+===================================== */
+
+.secao-modulos {
+    padding-top: 55px;
+}
+
+.lista-modulos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.modulo-card {
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #eee7f4;
+    border-radius: 13px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: 0.3s;
+}
+
+.modulo-card:hover {
+    border-color: #c5a5e4;
+    box-shadow: 0 7px 22px rgba(83, 37, 138, 0.10);
+    transform: translateY(-3px);
+}
+
+.modulo-card h3 {
+    margin-bottom: 10px;
+    color: #432269;
+    font-size: 19px;
+}
+
+.modulo-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.modulo-card button {
+    margin-top: 20px;
+}
+
+.modulo-card .botao {
+    width: 100%;
+}
+
+.modulo-card .status-modulo {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #eee5f8;
+    color: #68359b;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.modulo-card.concluido {
+    border-color: #b8dfc4;
+}
+
+.modulo-card.concluido .status-modulo {
+    background: #e2f5e8;
+    color: #287a43;
+}
+
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 45px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #68359b;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.botao:hover:not(:disabled) {
+    background: #51247f;
+    transform: translateY(-2px);
+}
+
+.botao:disabled {
+    background: #c8bfd1;
+    color: #fff;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.botao-secundario {
+    margin-bottom: 25px;
+    border: 1px solid #d8c8e8;
+    background: #fff;
+    color: #68359b;
+}
+
+.botao-secundario:hover {
+    background: #f3edf9;
+    color: #51247f;
+}
+
+
+/* =====================================
+   ÁREA DE ESTUDO
+===================================== */
+
+.area-estudo {
+    margin-top: 40px;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #eee7f4;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cabecalho-aula {
+    margin-bottom: 25px;
+}
+
+.identificacao-modulo {
+    margin-bottom: 8px;
+    color: #8050ad;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cabecalho-aula h2 {
+    color: #39205b;
+    font-size: 27px;
+}
+
+.progresso-aula {
+    margin-bottom: 30px;
+}
+
+.progresso-aula .progresso-info {
+    margin-top: 0;
+}
+
+.conteudo-etapa {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.9;
+    overflow-wrap: break-word;
+}
+
+.conteudo-etapa h2,
+.conteudo-etapa h3,
+.conteudo-etapa h4 {
+    margin-top: 25px;
+    margin-bottom: 12px;
+    color: #51247f;
+}
+
+.conteudo-etapa p {
+    margin-bottom: 18px;
+}
+
+.conteudo-etapa ul,
+.conteudo-etapa ol {
+    margin: 15px 0 20px 25px;
+}
+
+.conteudo-etapa li {
+    margin-bottom: 9px;
+}
+
+.conteudo-etapa img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 10px;
+}
+
+.conteudo-etapa video {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 25px auto;
+    border-radius: 10px;
+}
+
+.conteudo-etapa iframe {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    min-height: 350px;
+    margin: 25px auto;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* =====================================
+   PERGUNTAS DAS ETAPAS
+===================================== */
+
+.pergunta,
+.quiz {
+    margin-top: 35px;
+    padding: 25px;
+    background: #faf7fd;
+    border: 1px solid #eadff5;
+    border-radius: 12px;
+}
+
+.titulo-atividade {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.numero-atividade {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #68359b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.titulo-atividade h3 {
+    color: #432269;
+    font-size: 19px;
+}
+
+.titulo-atividade p {
+    color: #777;
+    font-size: 13px;
+}
+
+.texto-pergunta {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   OPÇÕES DE RESPOSTA
+===================================== */
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid #e2d6ee;
+    border-radius: 8px;
+    background: #fff;
+    color: #444;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.opcao:hover {
+    border-color: #9d75c2;
+    background: #f7f1fc;
+}
+
+.opcao input {
+    width: 17px;
+    height: 17px;
+    accent-color: #68359b;
+    cursor: pointer;
+}
+
+.opcao.selecionada {
+    border-color: #68359b;
+    background: #f2eafa;
+}
+
+
+/* =====================================
+   QUESTÕES DO QUIZ E DA PROVA
+===================================== */
+
+#questoesQuiz,
+#questoesProva {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.questao {
+    padding: 20px;
+    border: 1px solid #e7dcef;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.questao h3,
+.questao h4 {
+    margin-bottom: 15px;
+    color: #432269;
+    font-size: 16px;
+}
+
+.questao .opcoes {
+    margin-bottom: 0;
+}
+
+
+/* =====================================
+   RESULTADOS
+===================================== */
+
+.resultado {
+    margin: 18px 0;
+    padding: 13px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.resultado:empty {
+    display: none;
+}
+
+.resultado.sucesso {
+    background: #e6f5ea;
+    color: #287a43;
+}
+
+.resultado.erro {
+    background: #fdeaea;
+    color: #a52c2c;
+}
+
+.resultado.aviso {
+    background: #fff4dc;
+    color: #8a6100;
+}
+
+
+/* =====================================
+   CONCLUSÃO DO CURSO
+===================================== */
+
+.conclusao {
+    margin-top: 35px;
+    margin-bottom: 45px;
+    padding: 45px;
+    border-radius: 15px;
+    background: linear-gradient(120deg, #32145f, #7542a8);
+    color: #fff;
+    text-align: center;
+}
+
+.conclusao h2 {
+    margin: 18px 0 12px;
+    font-size: 28px;
+}
+
+.conclusao > p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #eee4fa;
+}
+
+.conclusao .botao {
+    background: #fff;
+    color: #54258a;
+}
+
+.conclusao .botao:hover {
+    background: #eee5f8;
+}
+
+.conclusao .quiz {
+    margin-top: 30px;
+    text-align: left;
+}
+
+
+/* =====================================
+   ÁREA DO CERTIFICADO
+===================================== */
+
+.certificado {
+    max-width: 650px;
+    margin: 30px auto 0;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+    color: #333;
+    text-align: left;
+}
+
+.certificado h3 {
+    margin-bottom: 10px;
+    color: #54258a;
+    font-size: 23px;
+}
+
+.certificado p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.certificado label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.certificado input {
+    width: 100%;
+    min-height: 45px;
+    margin-bottom: 18px;
+    padding: 12px;
+    border: 1px solid #d8c8e8;
+    border-radius: 7px;
+    outline: none;
+}
+
+.certificado input:focus {
+    border-color: #68359b;
+    box-shadow: 0 0 0 3px rgba(104, 53, 155, 0.12);
+}
+
+
+/* =====================================
+   CERTIFICADO IMPRESSO
+===================================== */
+
+.certificado-impresso {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.moldura-certificado {
+    padding: 65px 45px;
+    border: 8px double #68359b;
+    background: #fff;
+    text-align: center;
+}
+
+.moldura-certificado h1 {
+    margin: 25px 0;
+    color: #54258a;
+    font-size: 35px;
+}
+
+.moldura-certificado h2 {
+    margin: 20px 0;
+    color: #68359b;
+}
+
+.moldura-certificado p {
+    color: #555;
+}
+
+.assinatura {
+    margin-top: 45px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.botao-imprimir {
+    margin-top: 30px;
+}
+
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+footer {
+    padding: 30px 6%;
+    background: #291347;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer span {
+    color: #d6c4e9;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - TABLETS
+===================================== */
+
+@media (max-width: 850px) {
+
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cabecalho nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .voltar {
+        margin-right: auto;
+    }
+
+    .marca {
+        margin-right: auto;
+    }
+
+    .lista-modulos {
+        grid-template-columns: 1fr;
+    }
+
+    .apresentacao {
+        padding: 65px 6%;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .cabecalho {
+        padding: 12px 5%;
+        gap: 12px;
+    }
+
+    .voltar {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 115px;
+        max-height: 55px;
+    }
+
+    .cabecalho nav {
+        gap: 13px;
+    }
+
+    .cabecalho nav a {
+        font-size: 12px;
+    }
+
+    .apresentacao {
+        min-height: auto;
+        padding: 55px 6%;
+    }
+
+    .apresentacao h1 {
+        font-size: 34px;
+    }
+
+    .descricao-apresentacao {
+        font-size: 14px;
+    }
+
+    .informacoes-curso {
+        gap: 25px;
+    }
+
+    .informacoes-curso strong {
+        font-size: 21px;
+    }
+
+    .secao {
+        padding: 45px 5%;
+    }
+
+    .progresso {
+        margin-top: 20px;
+    }
+
+    .cabecalho-secao h2,
+    .titulo-principal h2 {
+        font-size: 24px;
+    }
+
+    .resumo-progresso {
+        gap: 25px;
+    }
+
+    .modulo-card {
+        padding: 20px;
+    }
+
+    .area-estudo {
+        padding: 18px;
+    }
+
+    .cabecalho-aula h2 {
+        font-size: 22px;
+    }
+
+    .conteudo-etapa {
+        font-size: 14px;
+    }
+
+    .pergunta,
+    .quiz {
+        padding: 17px;
+    }
+
+    .titulo-atividade {
+        align-items: flex-start;
+    }
+
+    .titulo-atividade h3 {
+        font-size: 17px;
+    }
+
+    .opcao {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .conclusao {
+        padding: 35px 20px;
+    }
+
+    .conclusao h2 {
+        font-size: 23px;
+    }
+
+    .certificado {
+        padding: 20px;
+    }
+
+    .certificado-impresso {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .moldura-certificado {
+        padding: 35px 15px;
+        border-width: 5px;
+    }
+
+    .moldura-certificado h1 {
+        font-size: 25px;
+    }
+
+}
+
