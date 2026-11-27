@@ -1,1026 +1,1297 @@
 
-/* =====================================
-   PARTE 1 — ELEMENTOS E PROGRESSO
-===================================== */
+/* =========================================
+   DADOS DOS MÓDULOS
+========================================= */
 
-// ELEMENTOS DA PÁGINA
+const modulos = [
 
-const listaModulos = document.getElementById("listaModulos");
-const areaEstudo = document.getElementById("areaEstudo");
-const voltarModulos = document.getElementById("voltarModulos");
+    {
+        titulo: "Introdução à Automação",
+        descricao: "Conheça os conceitos básicos da automação e sua importância nos processos industriais.",
+        etapas: [
+            {
+                titulo: "O que é automação?",
+                subtitulo: "Entendendo o conceito de automação",
+                texto: `
+                    <p>A automação é o uso de tecnologias e sistemas para realizar tarefas com pouca ou nenhuma intervenção humana.</p>
+                    <p>Ela permite que máquinas, equipamentos e programas executem atividades de maneira organizada e controlada.</p>
+                    <p>Seu objetivo é melhorar a eficiência, a produtividade e a qualidade dos processos.</p>
+                    <ul>
+                        <li>Redução de tarefas repetitivas.</li>
+                        <li>Maior precisão nas atividades.</li>
+                        <li>Melhor aproveitamento do tempo.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "A evolução da automação",
+                subtitulo: "Da produção manual aos sistemas inteligentes",
+                texto: `
+                    <p>A automação passou por várias transformações ao longo da história.</p>
+                    <p>Inicialmente, muitas atividades eram realizadas manualmente. Com o desenvolvimento das máquinas, surgiram equipamentos capazes de executar tarefas de forma automática.</p>
+                    <p>Atualmente, computadores, sensores, robôs e sistemas inteligentes fazem parte dos processos industriais.</p>
+                    <ul>
+                        <li>Primeira fase: trabalho predominantemente manual.</li>
+                        <li>Segunda fase: utilização de máquinas.</li>
+                        <li>Terceira fase: controle eletrônico e computacional.</li>
+                        <li>Fase atual: integração e sistemas inteligentes.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "A importância da automação",
+                subtitulo: "Como ela transforma as atividades",
+                texto: `
+                    <p>A automação está presente em diferentes áreas, como indústrias, hospitais, comércios e residências.</p>
+                    <p>Nas indústrias, ela ajuda a controlar máquinas, organizar a produção e acompanhar processos.</p>
+                    <p>Além disso, permite identificar falhas e melhorar a segurança das operações.</p>
+                    <ul>
+                        <li>Aumenta a produtividade.</li>
+                        <li>Ajuda no controle de qualidade.</li>
+                        <li>Contribui para a segurança.</li>
+                    </ul>
+                `
+            }
+        ],
+        quiz: [
+            {
+                pergunta: "O que é automação?",
+                alternativas: [
+                    "Realizar todas as atividades manualmente.",
+                    "Utilizar tecnologias para executar tarefas automaticamente.",
+                    "Eliminar todos os equipamentos tecnológicos.",
+                    "Substituir os sistemas de controle por trabalhos manuais."
+                ],
+                correta: 1
+            },
+            {
+                pergunta: "Qual é um dos objetivos da automação?",
+                alternativas: [
+                    "Diminuir a eficiência.",
+                    "Aumentar tarefas repetitivas.",
+                    "Melhorar a produtividade.",
+                    "Impedir o funcionamento das máquinas."
+                ],
+                correta: 2
+            },
+            {
+                pergunta: "Onde podemos encontrar a automação?",
+                alternativas: [
+                    "Somente nas indústrias.",
+                    "Apenas em computadores.",
+                    "Somente em hospitais.",
+                    "Em indústrias, residências e diversos setores."
+                ],
+                correta: 3
+            }
+        ]
+    },
 
-const identificacaoModulo = document.getElementById("identificacaoModulo");
-const nomeEtapa = document.getElementById("nomeEtapa");
-const contadorEtapa = document.getElementById("contadorEtapa");
-const porcentagemEtapa = document.getElementById("porcentagemEtapa");
-const barraEtapa = document.getElementById("barraEtapa");
-const conteudoEtapa = document.getElementById("conteudoEtapa");
+    {
+        titulo: "Sensores e Atuadores na Prática",
+        descricao: "Aprenda como os sensores identificam informações e como os atuadores executam ações.",
+        etapas: [
+            {
+                titulo: "O que são sensores?",
+                subtitulo: "Identificando informações do ambiente",
+                texto: `
+                    <p>Sensores são dispositivos utilizados para identificar alterações ou condições do ambiente.</p>
+                    <p>Eles podem detectar temperatura, presença, distância, luminosidade e pressão.</p>
+                    <p>As informações identificadas podem ser enviadas para um sistema de controle.</p>
+                    <ul>
+                        <li>Sensor de temperatura.</li>
+                        <li>Sensor de presença.</li>
+                        <li>Sensor de luminosidade.</li>
+                        <li>Sensor de proximidade.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "O que são atuadores?",
+                subtitulo: "Transformando comandos em ações",
+                texto: `
+                    <p>Atuadores são dispositivos responsáveis por executar ações a partir de comandos recebidos de um sistema de controle.</p>
+                    <p>Um atuador pode produzir movimento, calor ou outras respostas físicas.</p>
+                    <ul>
+                        <li>Motores elétricos.</li>
+                        <li>Válvulas automáticas.</li>
+                        <li>Cilindros pneumáticos.</li>
+                        <li>Relés e dispositivos de acionamento.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "Sensores e atuadores trabalhando juntos",
+                subtitulo: "A comunicação entre os dispositivos",
+                texto: `
+                    <p>Em um sistema automatizado, sensores e atuadores trabalham em conjunto.</p>
+                    <p>O sensor identifica uma condição, o sistema de controle analisa a informação e o atuador executa uma ação.</p>
+                    <p>Por exemplo: uma porta automática identifica a aproximação de uma pessoa e utiliza um motor para abrir a porta.</p>
+                    <ul>
+                        <li>Sensor: identifica a presença.</li>
+                        <li>Controlador: interpreta a informação.</li>
+                        <li>Atuador: executa o movimento.</li>
+                    </ul>
+                `
+            }
+        ],
+        quiz: [
+            {
+                pergunta: "Qual é a principal função de um sensor?",
+                alternativas: [
+                    "Executar movimentos mecânicos.",
+                    "Identificar informações do ambiente.",
+                    "Armazenar energia elétrica.",
+                    "Produzir peças industriais."
+                ],
+                correta: 1
+            },
+            {
+                pergunta: "Qual alternativa apresenta um atuador?",
+                alternativas: [
+                    "Sensor de temperatura.",
+                    "Sensor de presença.",
+                    "Motor elétrico.",
+                    "Sensor de luminosidade."
+                ],
+                correta: 2
+            },
+            {
+                pergunta: "Em uma porta automática, qual é a função do sensor?",
+                alternativas: [
+                    "Identificar a aproximação de uma pessoa.",
+                    "Realizar o movimento da porta.",
+                    "Armazenar energia.",
+                    "Imprimir informações."
+                ],
+                correta: 0
+            }
+        ]
+    },
 
-const perguntaEtapa = document.getElementById("perguntaEtapa");
-const textoPerguntaEtapa = document.getElementById("textoPerguntaEtapa");
-const opcoesPerguntaEtapa = document.getElementById("opcoesPerguntaEtapa");
-const resultadoEtapa = document.getElementById("resultadoEtapa");
-const concluirEtapa = document.getElementById("concluirEtapa");
+    {
+        titulo: "Comandos Elétricos e Lógica de Controle",
+        descricao: "Entenda como funcionam os comandos elétricos e os sistemas utilizados para controlar equipamentos.",
+        etapas: [
+            {
+                titulo: "Introdução aos comandos elétricos",
+                subtitulo: "Controlando equipamentos",
+                texto: `
+                    <p>Comandos elétricos são conjuntos de dispositivos utilizados para controlar o funcionamento de equipamentos elétricos.</p>
+                    <p>São encontrados em máquinas, motores e instalações industriais.</p>
+                    <p>Esses comandos permitem ligar, desligar e controlar equipamentos.</p>
+                    <ul>
+                        <li>Botoeiras.</li>
+                        <li>Contatores.</li>
+                        <li>Relés.</li>
+                        <li>Dispositivos de proteção.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "Elementos dos circuitos de controle",
+                subtitulo: "Conhecendo os componentes",
+                texto: `
+                    <p>Os circuitos de controle utilizam diferentes componentes para organizar as operações.</p>
+                    <p>As botoeiras permitem enviar comandos, enquanto os contatores realizam o acionamento de cargas elétricas.</p>
+                    <p>Os relés podem controlar circuitos e auxiliar na lógica de funcionamento.</p>
+                    <ul>
+                        <li>Botoeira de ligar.</li>
+                        <li>Botoeira de desligar.</li>
+                        <li>Contator.</li>
+                        <li>Relé de controle.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "Lógica de controle",
+                subtitulo: "Como os sistemas tomam decisões",
+                texto: `
+                    <p>A lógica de controle define como um sistema deve responder a determinadas condições.</p>
+                    <p>Ela utiliza informações de entrada para determinar quais ações devem acontecer.</p>
+                    <p>Um exemplo simples é um sistema que permite ligar uma máquina somente quando determinadas condições de segurança são atendidas.</p>
+                    <ul>
+                        <li>Entrada: informação recebida.</li>
+                        <li>Processamento: análise das condições.</li>
+                        <li>Saída: comando executado.</li>
+                    </ul>
+                `
+            }
+        ],
+        quiz: [
+            {
+                pergunta: "Para que servem os comandos elétricos?",
+                alternativas: [
+                    "Somente para armazenar arquivos.",
+                    "Para controlar equipamentos elétricos.",
+                    "Para medir temperatura corporal.",
+                    "Para substituir todos os sensores."
+                ],
+                correta: 1
+            },
+            {
+                pergunta: "Qual componente pode realizar o acionamento de cargas elétricas?",
+                alternativas: [
+                    "Contator.",
+                    "Sensor de luminosidade.",
+                    "Teclado.",
+                    "Monitor."
+                ],
+                correta: 0
+            },
+            {
+                pergunta: "O que representa a saída em um sistema de controle?",
+                alternativas: [
+                    "A informação inicial.",
+                    "O ambiente externo.",
+                    "A ação ou resposta do sistema.",
+                    "Apenas os dados armazenados."
+                ],
+                correta: 2
+            }
+        ]
+    },
 
-const quizModulo = document.getElementById("quizModulo");
-const questoesQuiz = document.getElementById("questoesQuiz");
-const corrigirQuiz = document.getElementById("corrigirQuiz");
-const resultadoQuiz = document.getElementById("resultadoQuiz");
+    {
+        titulo: "Controladores Lógicos Programáveis (CLP)",
+        descricao: "Conheça os CLPs e entenda como eles controlam processos automatizados.",
+        etapas: [
+            {
+                titulo: "O que é um CLP?",
+                subtitulo: "Conhecendo o controlador lógico programável",
+                texto: `
+                    <p>CLP significa Controlador Lógico Programável.</p>
+                    <p>É um equipamento eletrônico utilizado para controlar máquinas e processos industriais.</p>
+                    <p>Ele recebe informações de sensores, executa um programa e envia comandos para os dispositivos de saída.</p>
+                    <ul>
+                        <li>Recebe sinais de entrada.</li>
+                        <li>Processa informações.</li>
+                        <li>Controla dispositivos de saída.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "Entradas e saídas do CLP",
+                subtitulo: "Como o controlador recebe e envia informações",
+                texto: `
+                    <p>O CLP possui entradas e saídas utilizadas para se comunicar com outros dispositivos.</p>
+                    <p>As entradas recebem informações de sensores e botoeiras.</p>
+                    <p>As saídas enviam comandos para motores, lâmpadas, válvulas e outros equipamentos.</p>
+                    <ul>
+                        <li>Entrada: botão de comando.</li>
+                        <li>Processamento: programa do CLP.</li>
+                        <li>Saída: acionamento de um dispositivo.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "Programação e funcionamento",
+                subtitulo: "A lógica utilizada pelo CLP",
+                texto: `
+                    <p>O CLP funciona por meio de um programa que determina como os equipamentos devem responder às informações recebidas.</p>
+                    <p>Uma das linguagens utilizadas é a Ladder, que representa a lógica de controle por meio de símbolos gráficos.</p>
+                    <p>O programa permite organizar condições e comandos de acordo com o funcionamento desejado.</p>
+                    <ul>
+                        <li>Leitura das entradas.</li>
+                        <li>Execução do programa.</li>
+                        <li>Atualização das saídas.</li>
+                    </ul>
+                `
+            }
+        ],
+        quiz: [
+            {
+                pergunta: "O que significa a sigla CLP?",
+                alternativas: [
+                    "Controle de Luz Programada.",
+                    "Comando Lógico de Produção.",
+                    "Controlador Lógico Programável.",
+                    "Circuito de Ligação Principal."
+                ],
+                correta: 2
+            },
+            {
+                pergunta: "Qual é a função das entradas de um CLP?",
+                alternativas: [
+                    "Receber informações de dispositivos.",
+                    "Imprimir documentos.",
+                    "Armazenar energia mecânica.",
+                    "Executar movimentos diretamente."
+                ],
+                correta: 0
+            },
+            {
+                pergunta: "Qual é uma linguagem utilizada na programação de CLPs?",
+                alternativas: [
+                    "HTML.",
+                    "Ladder.",
+                    "CSS.",
+                    "Photoshop."
+                ],
+                correta: 1
+            }
+        ]
+    },
 
-const conclusaoCurso = document.getElementById("conclusaoCurso");
-const iniciarProva = document.getElementById("iniciarProva");
-const areaProva = document.getElementById("areaProva");
-const questoesProva = document.getElementById("questoesProva");
-const corrigirProva = document.getElementById("corrigirProva");
-const resultadoProva = document.getElementById("resultadoProva");
-
-const areaCertificado = document.getElementById("areaCertificado");
-const nomeCertificado = document.getElementById("nomeCertificado");
-const gerarCertificado = document.getElementById("gerarCertificado");
-
-const certificadoImpresso = document.getElementById("certificadoImpresso");
-const nomeAlunoImpresso = document.getElementById("nomeAlunoImpresso");
-
-
-// SALVAR PROGRESSO
-
-const chaveProgresso = "progressoAutomacaoNaPratica";
-
-const progressoPadrao = {
-    etapas: {},
-    quizzes: {},
-    provaAprovada: false,
-    nomeAluno: ""
-};
-
-let progresso = progressoPadrao;
-
-try {
-
-    const dadosSalvos = JSON.parse(
-        localStorage.getItem(chaveProgresso)
-    );
-
-    if (dadosSalvos && typeof dadosSalvos === "object") {
-
-        progresso = {
-            ...progressoPadrao,
-            ...dadosSalvos,
-            etapas: dadosSalvos.etapas || {},
-            quizzes: dadosSalvos.quizzes || {}
-        };
-
+    {
+        titulo: "Aplicações Práticas da Automação",
+        descricao: "Explore aplicações da automação em indústrias, residências e diferentes setores.",
+        etapas: [
+            {
+                titulo: "Automação industrial",
+                subtitulo: "Tecnologia nos processos de produção",
+                texto: `
+                    <p>A automação industrial utiliza máquinas, sensores, controladores e programas para organizar os processos de produção.</p>
+                    <p>Ela está presente em linhas de montagem, sistemas de embalagem e controle de qualidade.</p>
+                    <ul>
+                        <li>Linhas de produção automatizadas.</li>
+                        <li>Esteiras transportadoras.</li>
+                        <li>Braços robóticos.</li>
+                        <li>Controle de processos.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "Automação residencial",
+                subtitulo: "Tecnologia no cotidiano",
+                texto: `
+                    <p>A automação residencial utiliza dispositivos conectados para facilitar o controle de equipamentos em uma casa.</p>
+                    <p>É possível automatizar iluminação, climatização, segurança e outros recursos.</p>
+                    <ul>
+                        <li>Lâmpadas inteligentes.</li>
+                        <li>Controle automático de temperatura.</li>
+                        <li>Portões automáticos.</li>
+                        <li>Sistemas de monitoramento.</li>
+                    </ul>
+                `
+            },
+            {
+                titulo: "O futuro da automação",
+                subtitulo: "Novas tecnologias e possibilidades",
+                texto: `
+                    <p>A automação continua evoluindo com o desenvolvimento da inteligência artificial, robótica e Internet das Coisas.</p>
+                    <p>Essas tecnologias permitem integrar equipamentos, analisar informações e melhorar diferentes processos.</p>
+                    <p>O profissional da área precisa acompanhar as mudanças tecnológicas e desenvolver conhecimentos constantemente.</p>
+                    <ul>
+                        <li>Inteligência artificial.</li>
+                        <li>Robótica.</li>
+                        <li>Internet das Coisas.</li>
+                        <li>Indústria 4.0.</li>
+                    </ul>
+                `
+            }
+        ],
+        quiz: [
+            {
+                pergunta: "Qual é um exemplo de automação industrial?",
+                alternativas: [
+                    "Escrever em um caderno.",
+                    "Utilizar braços robóticos em uma linha de produção.",
+                    "Ler um livro.",
+                    "Desenhar manualmente."
+                ],
+                correta: 1
+            },
+            {
+                pergunta: "Qual alternativa apresenta um exemplo de automação residencial?",
+                alternativas: [
+                    "Lâmpadas inteligentes.",
+                    "Máquina de escrever.",
+                    "Caderno escolar.",
+                    "Livro impresso."
+                ],
+                correta: 0
+            },
+            {
+                pergunta: "Qual tecnologia está relacionada ao desenvolvimento da automação?",
+                alternativas: [
+                    "Máquina de escrever.",
+                    "Papel e lápis.",
+                    "Internet das Coisas.",
+                    "Impressão manual."
+                ],
+                correta: 2
+            }
+        ]
     }
 
-} catch (erro) {
-
-    console.warn("Erro ao carregar o progresso.", erro);
-
-}
+];
 
 
-// VARIÁVEIS DO CURSO
+/* =========================================
+   AVALIAÇÃO FINAL
+========================================= */
+
+const provaFinal = [
+    {
+        pergunta: "O que caracteriza um sistema automatizado?",
+        alternativas: [
+            "A realização exclusiva de tarefas manuais.",
+            "A utilização de tecnologias para executar e controlar processos.",
+            "A ausência de dispositivos eletrônicos.",
+            "O funcionamento sem qualquer organização."
+        ],
+        correta: 1
+    },
+    {
+        pergunta: "Qual dispositivo identifica alterações no ambiente?",
+        alternativas: ["Motor", "Contator", "Sensor", "Válvula"],
+        correta: 2
+    },
+    {
+        pergunta: "Qual é a função de um atuador?",
+        alternativas: [
+            "Executar ações a partir de comandos.",
+            "Somente armazenar informações.",
+            "Identificar a temperatura.",
+            "Criar programas de computador."
+        ],
+        correta: 0
+    },
+    {
+        pergunta: "Qual componente é utilizado em comandos elétricos?",
+        alternativas: ["Monitor", "Contator", "Teclado", "Impressora"],
+        correta: 1
+    },
+    {
+        pergunta: "O que representa uma entrada em um sistema de controle?",
+        alternativas: [
+            "A ação executada.",
+            "O resultado final.",
+            "Uma informação recebida pelo sistema.",
+            "A conclusão do processo."
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "Qual é a função principal de um CLP?",
+        alternativas: [
+            "Controlar máquinas e processos.",
+            "Editar imagens.",
+            "Criar documentos.",
+            "Navegar na internet."
+        ],
+        correta: 0
+    },
+    {
+        pergunta: "Qual linguagem é utilizada em muitos projetos com CLP?",
+        alternativas: ["HTML", "Ladder", "CSS", "SQL"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual é um exemplo de automação residencial?",
+        alternativas: [
+            "Livro impresso.",
+            "Caderno de anotações.",
+            "Lâmpada inteligente.",
+            "Quadro de papel."
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "Qual tecnologia está relacionada à Indústria 4.0?",
+        alternativas: [
+            "Internet das Coisas.",
+            "Máquina de escrever.",
+            "Papel carbono.",
+            "Trabalho exclusivamente manual."
+        ],
+        correta: 0
+    },
+    {
+        pergunta: "Qual é um dos benefícios da automação?",
+        alternativas: [
+            "Aumentar tarefas repetitivas.",
+            "Reduzir a precisão.",
+            "Impedir o controle dos processos.",
+            "Melhorar a produtividade."
+        ],
+        correta: 3
+    }
+];
+
+
+/* =========================================
+   VARIÁVEIS DO CURSO
+========================================= */
+
+const CHAVE = "progressoAutomacaoNaPratica";
+
+let progresso = JSON.parse(localStorage.getItem(CHAVE)) || {
+    modulosConcluidos: [],
+    etapasConcluidas: [],
+    moduloAtual: 0,
+    quizAtual: 0,
+    respostasCorretas: 0,
+    respostasErradas: 0,
+    provaIniciada: false,
+    provaConcluida: false,
+    notaFinal: 0
+};
 
 let moduloAtual = 0;
 let etapaAtual = 0;
-let respostaEtapaCorreta = false;
+let perguntaAtual = 0;
+let respostaSelecionada = null;
+let perguntaRespondida = false;
+let provaAtual = 0;
+let respostaProvaSelecionada = null;
+let provaPerguntaRespondida = false;
+let acertosProva = 0;
 
 
-// FUNÇÕES DE PROGRESSO
+/* =========================================
+   ELEMENTOS HTML
+========================================= */
+
+const listaModulos = document.getElementById("listaModulos");
+const areaEstudo = document.getElementById("areaEstudo");
+const conteudoEtapa = document.getElementById("conteudoEtapa");
+const quizModulo = document.getElementById("quizModulo");
+const conclusaoCurso = document.getElementById("conclusaoCurso");
+const areaProva = document.getElementById("areaProva");
+const areaCertificado = document.getElementById("areaCertificado");
+
+
+/* =========================================
+   SALVAR PROGRESSO
+========================================= */
 
 function salvarProgresso() {
-
-    localStorage.setItem(
-        chaveProgresso,
-        JSON.stringify(progresso)
-    );
-
-}
-
-function chaveEtapa(modulo, etapa) {
-
-    return `${modulo}-${etapa}`;
-
-}
-
-function etapaConcluida(modulo, etapa) {
-
-    return progresso.etapas[chaveEtapa(modulo, etapa)] === true;
-
-}
-
-function quizAprovado(indice) {
-
-    return progresso.quizzes[indice] === true;
-
-}
-
-function todasEtapasConcluidas(indice) {
-
-    return modulos[indice].etapas.every((_, etapa) =>
-        etapaConcluida(indice, etapa)
-    );
-
-}
-
-function moduloConcluido(indice) {
-
-    return todasEtapasConcluidas(indice) &&
-           quizAprovado(indice);
-
-}
-
-function cursoConcluido() {
-
-    return modulos.every((_, indice) =>
-        moduloConcluido(indice)
-    );
-
+    localStorage.setItem(CHAVE, JSON.stringify(progresso));
 }
 
 
-// ATUALIZAR PROGRESSO GERAL
+/* =========================================
+   VERIFICAR MÓDULO DESBLOQUEADO
+========================================= */
 
-function atualizarProgresso() {
-
-    const total = modulos.reduce(
-        (soma, modulo) => soma + modulo.etapas.length,
-        0
-    );
-
-    const concluidas = Object.values(progresso.etapas)
-        .filter(Boolean).length;
-
-    const porcentagem = total > 0
-        ? Math.round((concluidas / total) * 100)
-        : 0;
-
-    document.getElementById("porcentagemGeral").textContent =
-        porcentagem + "%";
-
-    document.getElementById("barraGeral").style.width =
-        porcentagem + "%";
-
-    document.getElementById("etapasConcluidas").textContent =
-        concluidas;
-
-    const quantidadeModulos = modulos.filter((_, indice) =>
-        moduloConcluido(indice)
-    ).length;
-
-    document.getElementById("modulosConcluidos").textContent =
-        quantidadeModulos;
-
-    document.getElementById("barraGeralAcessivel")
-        .setAttribute("aria-valuenow", porcentagem);
-
+function moduloDesbloqueado(indice) {
+    return indice === 0 ||
+        progresso.modulosConcluidos.includes(indice - 1);
 }
 
 
-// MOSTRAR MÓDULOS
+/* =========================================
+   MOSTRAR MÓDULOS NA TELA
+========================================= */
 
-/* =====================================
-   MOSTRAR OS MÓDULOS NA TELA
-===================================== */
-
-function atualizarModulos() {
+function mostrarModulos() {
 
     listaModulos.innerHTML = "";
 
     modulos.forEach((modulo, indice) => {
 
-        const liberado =
-            indice === 0 || quizAprovado(indice - 1);
-
-        const concluido = moduloConcluido(indice);
+        const concluido = progresso.modulosConcluidos.includes(indice);
+        const desbloqueado = moduloDesbloqueado(indice);
 
         const card = document.createElement("div");
 
-        card.className = "card-modulo";
+        card.className = "modulo-card";
 
-        const titulo = document.createElement("h3");
-
-        titulo.textContent = modulo.titulo;
-
-        const descricao = document.createElement("p");
-
-        descricao.textContent = modulo.descricao || "";
-
-        const horas = document.createElement("p");
-
-        horas.textContent = modulo.horas || "";
-
-        const status = document.createElement("span");
-
-        status.className = "status";
-
-        if (concluido) {
-
-            status.textContent = "Concluído";
-
-        } else if (liberado) {
-
-            status.textContent = "Disponível";
-
-        } else {
-
-            status.textContent = "Bloqueado";
+        if (!desbloqueado) {
+            card.classList.add("modulo-bloqueado");
         }
 
-        const botao = document.createElement("button");
+        card.innerHTML = `
+            <span class="modulo-numero">
+                MÓDULO ${String(indice + 1).padStart(2, "0")}
+            </span>
 
-        botao.type = "button";
-        botao.className = "botao";
+            <h3>${modulo.titulo}</h3>
 
-        if (concluido) {
+            <p>${modulo.descricao}</p>
 
-            botao.textContent = "Revisar módulo";
+            <div class="modulo-detalhes">
+                <span>3 etapas de aprendizagem</span>
+                <span>20h de curso</span>
+            </div>
 
-        } else if (liberado) {
+            <div class="status-modulo">
+                ${concluido ? "✓ Concluído" :
+                    desbloqueado ? "● Disponível" : "🔒 Bloqueado"}
+            </div>
 
-            botao.textContent = "Iniciar módulo";
+            <button class="botao-principal"
+                ${!desbloqueado ? "disabled" : ""}
+                data-modulo="${indice}">
+                ${concluido ? "Revisar módulo" :
+                    desbloqueado ? "Acessar módulo →" : "Bloqueado"}
+            </button>
+        `;
 
-        } else {
+        const botao = card.querySelector("button");
 
-            botao.textContent = "Módulo bloqueado";
-            botao.disabled = true;
-        }
-
-        if (liberado) {
-
-            botao.addEventListener("click", function () {
-                abrirModulo(indice);
-            });
-        }
-
-        card.appendChild(titulo);
-        card.appendChild(descricao);
-        card.appendChild(horas);
-        card.appendChild(status);
-        card.appendChild(botao);
+        botao.addEventListener("click", () => {
+            abrirModulo(indice);
+        });
 
         listaModulos.appendChild(card);
+
     });
+
+    if (progresso.modulosConcluidos.length === modulos.length) {
+        mostrarBotaoProva();
+    }
 
     atualizarProgresso();
 }
 
-// ABRIR MÓDULO
+
+/* =========================================
+   ABRIR MÓDULO
+========================================= */
 
 function abrirModulo(indice) {
 
-    if (indice < 0 || indice >= modulos.length) {
-        return;
-    }
+    if (!moduloDesbloqueado(indice)) return;
 
     moduloAtual = indice;
+    etapaAtual = 0;
 
     listaModulos.hidden = true;
     areaEstudo.hidden = false;
-
-    quizModulo.hidden = true;
-    perguntaEtapa.hidden = false;
-
-    identificarProximaEtapa();
-
-}
-
-
-// VOLTAR PARA A LISTA DE MÓDULOS
-
-function voltarParaModulos() {
-
-    areaEstudo.hidden = true;
-    listaModulos.hidden = false;
-
-    quizModulo.hidden = true;
-    perguntaEtapa.hidden = false;
-
-    atualizarModulos();
-
-}
-
-voltarModulos.addEventListener("click", voltarParaModulos);
-
-
-// INICIAR O CURSO
-
-function iniciarCurso() {
-
-    atualizarModulos();
-
-    conclusaoCurso.hidden = !cursoConcluido();
-
-    if (progresso.provaAprovada) {
-
-        areaCertificado.hidden = false;
-
-        nomeCertificado.value =
-            progresso.nomeAluno || "";
-
-    }
-
-    if (progresso.provaAprovada && progresso.nomeAluno) {
-
-        nomeAlunoImpresso.textContent =
-            progresso.nomeAluno;
-
-        certificadoImpresso.hidden = false;
-
-    }
-
-}
-
-
-
-/* =====================================
-   ETAPAS E PERGUNTAS DO MÓDULO
-===================================== */
-
-// Obtém o texto da pergunta
-function obterPergunta(item) {
-    if (Array.isArray(item)) {
-        return item[0];
-    }
-
-    return item.pergunta || item.tituloPergunta || "";
-}
-
-// Obtém as alternativas
-function obterOpcoes(item) {
-    if (Array.isArray(item)) {
-        return item[1] || [];
-    }
-
-    return item.opcoes || [];
-}
-
-// Obtém a resposta correta
-function obterRespostaCorreta(item) {
-    if (Array.isArray(item)) {
-        return item[2];
-    }
-
-    return item.resposta ?? item.correta;
-}
-
-// Obtém o conteúdo da etapa
-function obterTextoEtapa(etapa) {
-    return etapa.texto ?? etapa.conteudo ?? "";
-}
-
-// Obtém o título da etapa
-function obterTituloEtapa(etapa) {
-    return etapa.subtitulo || etapa.titulo || "Etapa do módulo";
-}
-
-
-/* =====================================
-   IDENTIFICAR A PRÓXIMA ETAPA
-===================================== */
-
-function identificarProximaEtapa() {
-
-    const modulo = modulos[moduloAtual];
-
-    if (!modulo) {
-        return;
-    }
-
-    for (let i = 0; i < modulo.etapas.length; i++) {
-
-        if (!etapaConcluida(moduloAtual, i)) {
-            renderizarEtapa(i);
-            return;
-        }
-    }
-
-    // Todas as etapas foram concluídas
-    mostrarQuiz();
-}
-
-
-/* =====================================
-   EXIBIR UMA ETAPA
-===================================== */
-
-function renderizarEtapa(indiceEtapa) {
-
-    const modulo = modulos[moduloAtual];
-
-    if (!modulo || !modulo.etapas[indiceEtapa]) {
-        return;
-    }
-
-    etapaAtual = indiceEtapa;
-
-    const etapa = modulo.etapas[indiceEtapa];
-
-    areaEstudo.hidden = false;
-    quizModulo.hidden = true;
     conclusaoCurso.hidden = true;
+    areaProva.hidden = true;
+    areaCertificado.hidden = true;
 
-    perguntaEtapa.hidden = false;
+    document.getElementById("numeroModulo").textContent =
+        `MÓDULO ${indice + 1}`;
 
-    identificacaoModulo.textContent = modulo.titulo;
+    document.getElementById("tituloModulo").textContent =
+        modulos[indice].titulo;
 
-    nomeEtapa.textContent = obterTituloEtapa(etapa);
+    document.getElementById("descricaoModulo").textContent =
+        modulos[indice].descricao;
 
-    contadorEtapa.textContent =
-        `Etapa ${indiceEtapa + 1} de ${modulo.etapas.length}`;
-
-    const percentual =
-        ((indiceEtapa + 1) / modulo.etapas.length) * 100;
-
-    porcentagemEtapa.textContent =
-        `${Math.round(percentual)}%`;
-
-    barraEtapa.style.width = `${percentual}%`;
-
-    // Exibir conteúdo da etapa
-    const textoEtapa = obterTextoEtapa(etapa);
-
-    conteudoEtapa.innerHTML = textoEtapa;
-
-    // Exibir imagem, caso exista
-    if (etapa.imagem) {
-
-        const imagem = document.createElement("img");
-
-        imagem.src = etapa.imagem;
-        imagem.alt = obterTituloEtapa(etapa);
-        imagem.className = "imagem-etapa";
-
-        conteudoEtapa.prepend(imagem);
-    }
-
-    // Exibir pergunta
-    textoPerguntaEtapa.textContent =
-        obterPergunta(etapa);
-
-    // Limpar alternativas anteriores
-    opcoesPerguntaEtapa.innerHTML = "";
-
-    resultadoEtapa.textContent = "";
-    resultadoEtapa.className = "resultado";
-
-    concluirEtapa.disabled = false;
-    concluirEtapa.textContent = "Verificar resposta";
-
-    // Criar alternativas
-    const opcoes = obterOpcoes(etapa);
-
-    opcoes.forEach((opcao, indice) => {
-
-        const label = document.createElement("label");
-
-        label.className = "opcao-pergunta";
-
-        const input = document.createElement("input");
-
-        input.type = "radio";
-        input.name = "respostaEtapa";
-        input.value = indice;
-
-        const texto = document.createElement("span");
-
-        texto.textContent = opcao;
-
-        label.appendChild(input);
-        label.appendChild(texto);
-
-        opcoesPerguntaEtapa.appendChild(label);
-    });
-
-    atualizarProgresso();
+    mostrarEtapa();
 }
 
 
-/* =====================================
-   VERIFICAR RESPOSTA DA ETAPA
-===================================== */
+/* =========================================
+   MOSTRAR ETAPA
+========================================= */
 
-function verificarEtapa() {
+function mostrarEtapa() {
 
     const modulo = modulos[moduloAtual];
     const etapa = modulo.etapas[etapaAtual];
 
-    const selecionada = document.querySelector(
-        'input[name="respostaEtapa"]:checked'
-    );
+    conteudoEtapa.hidden = false;
+    quizModulo.hidden = true;
+    conclusaoCurso.hidden = true;
 
-    if (!selecionada) {
+    document.getElementById("numeroEtapa").textContent =
+        `ETAPA ${etapaAtual + 1} DE ${modulo.etapas.length}`;
 
-        resultadoEtapa.textContent =
-            "Selecione uma alternativa antes de continuar.";
+    document.getElementById("tituloEtapa").textContent =
+        etapa.titulo;
 
-        resultadoEtapa.className = "resultado erro";
+    document.getElementById("subtituloEtapa").textContent =
+        etapa.subtitulo;
 
-        return;
-    }
+    document.getElementById("textoEtapa").innerHTML =
+        etapa.texto;
 
-    const resposta = Number(selecionada.value);
+    const indicador = document.getElementById("indicadorEtapas");
 
-    const correta = obterRespostaCorreta(etapa);
+    indicador.innerHTML = "";
 
-    // Aceita resposta correta como índice ou texto
-    const acertou =
-        Number(correta) === resposta ||
-        String(correta).trim().toLowerCase() ===
-        String(obterOpcoes(etapa)[resposta]).trim().toLowerCase();
+    modulo.etapas.forEach((item, indice) => {
 
-    if (!acertou) {
+        const ponto = document.createElement("div");
 
-        resultadoEtapa.textContent =
-            etapa.explicacao ||
-            "Resposta incorreta. Tente novamente.";
+        ponto.className = "etapa-ponto";
 
-        resultadoEtapa.className = "resultado erro";
+        if (indice <= etapaAtual) {
+            ponto.classList.add("ativo");
+        }
 
-        return;
-    }
+        indicador.appendChild(ponto);
+    });
 
-    // Registrar etapa concluída
-    progresso.etapas[chaveEtapa(moduloAtual, etapaAtual)] = true;
+    document.getElementById("etapaAnterior").disabled =
+        etapaAtual === 0;
 
-    salvarProgresso();
+    document.getElementById("proximaEtapa").textContent =
+        etapaAtual === modulo.etapas.length - 1
+            ? "Finalizar conteúdo →"
+            : "Próxima etapa →";
 
     atualizarProgresso();
-
-    // Desativar alternativas após acertar
-    document.querySelectorAll(
-        'input[name="respostaEtapa"]'
-    ).forEach(input => {
-        input.disabled = true;
-    });
-
-    resultadoEtapa.textContent =
-        etapa.explicacao ||
-        "Muito bem! Você concluiu esta etapa.";
-
-    resultadoEtapa.className = "resultado sucesso";
-
-    concluirEtapa.textContent =
-        etapaAtual === modulo.etapas.length - 1
-            ? "Ir para o quiz do módulo"
-            : "Próxima etapa";
-
-    // Avançar somente quando clicar no botão
-    concluirEtapa.onclick = function () {
-
-        if (etapaAtual === modulo.etapas.length - 1) {
-
-            mostrarQuiz();
-
-        } else {
-
-            identificarProximaEtapa();
-        }
-    };
 }
 
 
-/* =====================================
-   EXIBIR O QUIZ DO MÓDULO
-===================================== */
+/* =========================================
+   NAVEGAÇÃO ENTRE ETAPAS
+========================================= */
 
-function mostrarQuiz() {
+document.getElementById("proximaEtapa").addEventListener("click", () => {
 
-    const modulo = modulos[moduloAtual];
+    if (etapaAtual < modulos[moduloAtual].etapas.length - 1) {
 
-    if (!modulo) {
-        return;
-    }
-
-    // Conferir se todas as etapas foram concluídas
-    if (!todasEtapasConcluidas(moduloAtual)) {
-
-        identificarProximaEtapa();
-        return;
-    }
-
-    perguntaEtapa.hidden = true;
-    quizModulo.hidden = false;
-
-    resultadoQuiz.textContent = "";
-    resultadoQuiz.className = "resultado";
-
-    questoesQuiz.innerHTML = "";
-
-    const perguntas = modulo.quiz || [];
-
-    perguntas.forEach((questao, indice) => {
-
-        const pergunta = document.createElement("div");
-
-        pergunta.className = "questao-quiz";
-
-        const titulo = document.createElement("p");
-
-        titulo.textContent =
-            `${indice + 1}. ${obterPergunta(questao)}`;
-
-        pergunta.appendChild(titulo);
-
-        const opcoes = obterOpcoes(questao);
-
-        opcoes.forEach((opcao, indiceOpcao) => {
-
-            const label = document.createElement("label");
-
-            label.className = "opcao-pergunta";
-
-            const input = document.createElement("input");
-
-            input.type = "radio";
-            input.name = `quiz-${indice}`;
-            input.value = indiceOpcao;
-
-            const texto = document.createElement("span");
-
-            texto.textContent = opcao;
-
-            label.appendChild(input);
-            label.appendChild(texto);
-
-            pergunta.appendChild(label);
-        });
-
-        questoesQuiz.appendChild(pergunta);
-    });
-
-    corrigirQuiz.disabled = false;
-    corrigirQuiz.textContent = "Corrigir quiz";
-}
-
-
-/* =====================================
-   CORRIGIR QUIZ DO MÓDULO
-===================================== */
-
-function corrigirQuizModulo() {
-
-    const modulo = modulos[moduloAtual];
-
-    const perguntas = modulo.quiz || [];
-
-    if (perguntas.length === 0) {
-
-        resultadoQuiz.textContent =
-            "Este módulo ainda não possui perguntas cadastradas.";
-
-        resultadoQuiz.className = "resultado erro";
-
-        return;
-    }
-
-    let acertos = 0;
-
-    for (let i = 0; i < perguntas.length; i++) {
-
-        const selecionada = document.querySelector(
-            `input[name="quiz-${i}"]:checked`
-        );
-
-        if (!selecionada) {
-
-            resultadoQuiz.textContent =
-                "Responda todas as perguntas antes de corrigir.";
-
-            resultadoQuiz.className = "resultado erro";
-
-            return;
-        }
-
-        const resposta = Number(selecionada.value);
-
-        const correta = obterRespostaCorreta(perguntas[i]);
-
-        const acertou =
-            Number(correta) === resposta ||
-            String(correta).trim().toLowerCase() ===
-            String(obterOpcoes(perguntas[i])[resposta]).trim().toLowerCase();
-
-        if (acertou) {
-            acertos++;
-        }
-    }
-
-    const percentual = Math.round(
-        (acertos / perguntas.length) * 100
-    );
-
-    if (percentual >= 70) {
-
-        progresso.quizzes[moduloAtual] = true;
-
-        salvarProgresso();
-
-        atualizarProgresso();
-        atualizarModulos();
-
-        resultadoQuiz.textContent =
-            `Parabéns! Você acertou ${acertos} de ${perguntas.length} questões (${percentual}%). Módulo concluído!`;
-
-        resultadoQuiz.className = "resultado sucesso";
-
-        corrigirQuiz.disabled = true;
-
-        // Criar botões de navegação
-        const navegacao = document.createElement("div");
-
-        navegacao.className = "navegacao-quiz";
-
-        const botaoVoltar = document.createElement("button");
-
-        botaoVoltar.type = "button";
-        botaoVoltar.className = "botao";
-        botaoVoltar.textContent = "Voltar aos módulos";
-
-        botaoVoltar.onclick = voltarParaModulos;
-
-        navegacao.appendChild(botaoVoltar);
-
-        // Liberar próximo módulo, se existir
-        if (moduloAtual < modulos.length - 1) {
-
-            const botaoProximo = document.createElement("button");
-
-            botaoProximo.type = "button";
-            botaoProximo.className = "botao";
-            botaoProximo.textContent = "Próximo módulo";
-
-            botaoProximo.onclick = function () {
-                abrirModulo(moduloAtual + 1);
-            };
-
-            navegacao.appendChild(botaoProximo);
-        }
-
-        resultadoQuiz.appendChild(navegacao);
+        etapaAtual++;
+        marcarEtapaConcluida();
+        mostrarEtapa();
 
     } else {
 
-        resultadoQuiz.textContent =
-            `Você acertou ${acertos} de ${perguntas.length} questões (${percentual}%). É necessário alcançar 70% para concluir. Tente novamente.`;
-
-        resultadoQuiz.className = "resultado erro";
+        marcarEtapaConcluida();
+        abrirQuiz();
     }
+
+});
+
+document.getElementById("etapaAnterior").addEventListener("click", () => {
+
+    if (etapaAtual > 0) {
+        etapaAtual--;
+        mostrarEtapa();
+    }
+
+});
+
+
+/* =========================================
+   REGISTRAR ETAPA CONCLUÍDA
+========================================= */
+
+function marcarEtapaConcluida() {
+
+    const identificador = `${moduloAtual}-${etapaAtual}`;
+
+    if (!progresso.etapasConcluidas.includes(identificador)) {
+        progresso.etapasConcluidas.push(identificador);
+    }
+
+    salvarProgresso();
+    atualizarProgresso();
 }
 
 
+/* =========================================
+   ABRIR QUIZ DO MÓDULO
+========================================= */
+
+function abrirQuiz() {
+
+    marcarEtapaConcluida();
+
+    conteudoEtapa.hidden = true;
+    quizModulo.hidden = false;
+
+    perguntaAtual = 0;
+    mostrarPerguntaQuiz();
+}
 
 
-/* =====================================
-   PROVA FINAL DO CURSO
-===================================== */
+/* =========================================
+   MOSTRAR PERGUNTAS DO QUIZ
+========================================= */
 
-function mostrarProvaFinal() {
+function mostrarPerguntaQuiz() {
+
+    const perguntas = modulos[moduloAtual].quiz;
+    const pergunta = perguntas[perguntaAtual];
+
+    respostaSelecionada = null;
+    perguntaRespondida = false;
+
+    document.getElementById("numeroPergunta").textContent =
+        `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
+
+    document.getElementById("perguntaEtapa").textContent =
+        pergunta.pergunta;
+
+    document.getElementById("feedbackQuiz").textContent = "";
+
+    document.getElementById("responderQuiz").hidden = false;
+    document.getElementById("responderQuiz").disabled = false;
+    document.getElementById("proximaPergunta").hidden = true;
+
+    const alternativas = document.getElementById("alternativasQuiz");
+
+    alternativas.innerHTML = "";
+
+    pergunta.alternativas.forEach((alternativa, indice) => {
+
+        const label = document.createElement("label");
+
+        label.className = "alternativa";
+
+        label.innerHTML = `
+            <input type="radio" name="respostaQuiz" value="${indice}">
+            ${alternativa}
+        `;
+
+        label.querySelector("input").addEventListener("change", () => {
+            respostaSelecionada = indice;
+        });
+
+        alternativas.appendChild(label);
+
+    });
+
+}
+
+
+/* =========================================
+   RESPONDER QUIZ
+========================================= */
+
+document.getElementById("responderQuiz").addEventListener("click", () => {
+
+    if (respostaSelecionada === null || perguntaRespondida) return;
+
+    const pergunta = modulos[moduloAtual].quiz[perguntaAtual];
+
+    perguntaRespondida = true;
+
+    const correta = respostaSelecionada === pergunta.correta;
+
+    if (correta) {
+
+        progresso.respostasCorretas++;
+
+        document.getElementById("feedbackQuiz").textContent =
+            "✓ Resposta correta! Muito bem!";
+
+        document.getElementById("feedbackQuiz").style.color = "#21864b";
+
+    } else {
+
+        progresso.respostasErradas++;
+
+        document.getElementById("feedbackQuiz").textContent =
+            "✗ Resposta incorreta. A alternativa correta é: " +
+            pergunta.alternativas[pergunta.correta];
+
+        document.getElementById("feedbackQuiz").style.color = "#c0392b";
+
+    }
+
+    document.getElementById("responderQuiz").hidden = true;
+    document.getElementById("proximaPergunta").hidden = false;
+
+    salvarProgresso();
+
+});
+
+
+/* =========================================
+   PRÓXIMA PERGUNTA DO QUIZ
+========================================= */
+
+document.getElementById("proximaPergunta").addEventListener("click", () => {
+
+    perguntaAtual++;
+
+    if (perguntaAtual < modulos[moduloAtual].quiz.length) {
+
+        mostrarPerguntaQuiz();
+
+    } else {
+
+        concluirModulo();
+
+    }
+
+});
+
+
+/* =========================================
+   CONCLUIR MÓDULO
+========================================= */
+
+function concluirModulo() {
+
+    if (!progresso.modulosConcluidos.includes(moduloAtual)) {
+        progresso.modulosConcluidos.push(moduloAtual);
+    }
+
+    salvarProgresso();
 
     areaEstudo.hidden = true;
     conclusaoCurso.hidden = false;
-    areaProva.hidden = false;
-    areaCertificado.hidden = true;
 
-    questoesProva.innerHTML = "";
+    document.getElementById("continuarCurso").textContent =
+        moduloAtual === modulos.length - 1
+            ? "Ir para avaliação final →"
+            : "Voltar aos módulos →";
 
-    resultadoProva.textContent = "";
-    resultadoProva.className = "resultado";
-
-    const perguntas = provaFinal || [];
-
-    perguntas.forEach((questao, indice) => {
-
-        const bloco = document.createElement("div");
-        bloco.className = "questao-quiz";
-
-        const titulo = document.createElement("p");
-
-        titulo.textContent =
-            `${indice + 1}. ${obterPergunta(questao)}`;
-
-        bloco.appendChild(titulo);
-
-        const opcoes = obterOpcoes(questao);
-
-        opcoes.forEach((opcao, indiceOpcao) => {
-
-            const label = document.createElement("label");
-            label.className = "opcao-pergunta";
-
-            const input = document.createElement("input");
-
-            input.type = "radio";
-            input.name = `prova-${indice}`;
-            input.value = indiceOpcao;
-
-            const texto = document.createElement("span");
-            texto.textContent = opcao;
-
-            label.appendChild(input);
-            label.appendChild(texto);
-
-            bloco.appendChild(label);
-        });
-
-        questoesProva.appendChild(bloco);
-    });
-
-    corrigirProva.disabled = false;
-    corrigirProva.textContent = "Corrigir prova";
+    mostrarModulos();
 }
 
 
-/* =====================================
-   CORRIGIR PROVA FINAL
-===================================== */
+/* =========================================
+   CONTINUAR APÓS CONCLUIR MÓDULO
+========================================= */
 
-function corrigirProvaFinal() {
+document.getElementById("continuarCurso").addEventListener("click", () => {
 
-    const perguntas = provaFinal || [];
+    conclusaoCurso.hidden = true;
 
-    if (perguntas.length === 0) {
+    if (progresso.modulosConcluidos.length === modulos.length) {
 
-        resultadoProva.textContent =
-            "A prova final ainda não possui questões cadastradas.";
-
-        resultadoProva.className = "resultado erro";
-
-        return;
-    }
-
-    let acertos = 0;
-
-    for (let i = 0; i < perguntas.length; i++) {
-
-        const selecionada = document.querySelector(
-            `input[name="prova-${i}"]:checked`
-        );
-
-        if (!selecionada) {
-
-            resultadoProva.textContent =
-                "Responda todas as questões antes de corrigir.";
-
-            resultadoProva.className = "resultado erro";
-
-            return;
-        }
-
-        const resposta = Number(selecionada.value);
-
-        const correta = obterRespostaCorreta(perguntas[i]);
-
-        const acertou =
-            Number(correta) === resposta ||
-            String(correta).trim().toLowerCase() ===
-            String(obterOpcoes(perguntas[i])[resposta]).trim().toLowerCase();
-
-        if (acertou) {
-            acertos++;
-        }
-    }
-
-    const percentual = Math.round(
-        (acertos / perguntas.length) * 100
-    );
-
-    if (percentual >= 70) {
-
-        progresso.provaAprovada = true;
-
-        salvarProgresso();
-
-        resultadoProva.textContent =
-            `Parabéns! Você acertou ${acertos} de ${perguntas.length} questões (${percentual}%). Você foi aprovado na prova final!`;
-
-        resultadoProva.className = "resultado sucesso";
-
-        corrigirProva.disabled = true;
-
-        areaCertificado.hidden = false;
+        iniciarProva();
 
     } else {
 
-        resultadoProva.textContent =
-            `Você acertou ${acertos} de ${perguntas.length} questões (${percentual}%). É necessário alcançar 70% para ser aprovado. Tente novamente.`;
+        areaEstudo.hidden = true;
+        listaModulos.hidden = false;
 
-        resultadoProva.className = "resultado erro";
+        mostrarModulos();
     }
+
+});
+
+
+/* =========================================
+   VOLTAR PARA OS MÓDULOS
+========================================= */
+
+document.getElementById("voltarModulos").addEventListener("click", () => {
+
+    areaEstudo.hidden = true;
+    quizModulo.hidden = true;
+    listaModulos.hidden = false;
+
+    mostrarModulos();
+
+});
+
+
+/* =========================================
+   ATUALIZAR PROGRESSO
+========================================= */
+
+function atualizarProgresso() {
+
+    const totalEtapas = modulos.reduce(
+        (total, modulo) => total + modulo.etapas.length,
+        0
+    );
+
+    const totalConcluidas = progresso.etapasConcluidas.length;
+
+    const porcentagem = Math.round(
+        (totalConcluidas / totalEtapas) * 100
+    );
+
+    document.getElementById("porcentagem").textContent =
+        `${porcentagem}%`;
+
+    document.getElementById("barraProgresso").style.width =
+        `${porcentagem}%`;
+
+    document.getElementById("modulosConcluidos").textContent =
+        progresso.modulosConcluidos.length;
+
+    document.getElementById("etapasConcluidas").textContent =
+        totalConcluidas;
+
 }
 
 
-/* =====================================
-   GERAR CERTIFICADO
-===================================== */
+/* =========================================
+   LIBERAR AVALIAÇÃO FINAL
+========================================= */
 
-function gerarCertificadoCurso() {
+function mostrarBotaoProva() {
 
-    const nome = nomeCertificado.value.trim();
+    if (document.getElementById("botaoProvaFinal")) return;
 
-    if (nome.length < 3) {
+    const botao = document.createElement("button");
 
-        alert("Digite seu nome completo para gerar o certificado.");
+    botao.id = "botaoProvaFinal";
+    botao.className = "botao-principal";
+    botao.textContent = "Iniciar avaliação final →";
 
-        return;
-    }
+    botao.style.display = "block";
+    botao.style.margin = "30px auto";
 
-    if (!progresso.provaAprovada) {
+    botao.addEventListener("click", iniciarProva);
 
-        alert("Você precisa ser aprovado na prova final.");
+    listaModulos.appendChild(botao);
+}
 
-        return;
-    }
 
-    progresso.nomeAluno = nome;
+/* =========================================
+   INICIAR PROVA FINAL
+========================================= */
+
+function iniciarProva() {
+
+    listaModulos.hidden = true;
+    areaEstudo.hidden = true;
+    conclusaoCurso.hidden = true;
+    areaProva.hidden = false;
+
+    provaAtual = 0;
+    acertosProva = 0;
+    progresso.provaIniciada = true;
 
     salvarProgresso();
 
-    nomeAlunoImpresso.textContent = nome;
+    mostrarPerguntaProva();
+}
 
-    certificadoImpresso.hidden = false;
 
+/* =========================================
+   MOSTRAR QUESTÕES DA PROVA
+========================================= */
+
+function mostrarPerguntaProva() {
+
+    const pergunta = provaFinal[provaAtual];
+
+    respostaProvaSelecionada = null;
+    provaPerguntaRespondida = false;
+
+    document.getElementById("numeroProva").textContent =
+        `Questão ${provaAtual + 1} de ${provaFinal.length}`;
+
+    document.getElementById("perguntaProva").textContent =
+        pergunta.pergunta;
+
+    document.getElementById("feedbackProva").textContent = "";
+
+    document.getElementById("responderProva").hidden = false;
+    document.getElementById("responderProva").disabled = false;
+    document.getElementById("proximaProva").hidden = true;
+
+    const alternativas = document.getElementById("alternativasProva");
+
+    alternativas.innerHTML = "";
+
+    pergunta.alternativas.forEach((alternativa, indice) => {
+
+        const label = document.createElement("label");
+
+        label.className = "alternativa";
+
+        label.innerHTML = `
+            <input type="radio" name="respostaProva" value="${indice}">
+            ${alternativa}
+        `;
+
+        label.querySelector("input").addEventListener("change", () => {
+            respostaProvaSelecionada = indice;
+        });
+
+        alternativas.appendChild(label);
+
+    });
+
+}
+
+
+/* =========================================
+   RESPONDER PROVA FINAL
+========================================= */
+
+document.getElementById("responderProva").addEventListener("click", () => {
+
+    if (respostaProvaSelecionada === null || provaPerguntaRespondida) return;
+
+    provaPerguntaRespondida = true;
+
+    const pergunta = provaFinal[provaAtual];
+
+    const correta = respostaProvaSelecionada === pergunta.correta;
+
+    if (correta) {
+
+        acertosProva++;
+
+        document.getElementById("feedbackProva").textContent =
+            "✓ Resposta correta!";
+
+        document.getElementById("feedbackProva").style.color = "#21864b";
+
+    } else {
+
+        document.getElementById("feedbackProva").textContent =
+            "✗ Resposta incorreta. Correta: " +
+            pergunta.alternativas[pergunta.correta];
+
+        document.getElementById("feedbackProva").style.color = "#c0392b";
+
+    }
+
+    document.getElementById("responderProva").hidden = true;
+    document.getElementById("proximaProva").hidden = false;
+
+});
+
+
+/* =========================================
+   AVANÇAR NA PROVA
+========================================= */
+
+document.getElementById("proximaProva").addEventListener("click", () => {
+
+    provaAtual++;
+
+    if (provaAtual < provaFinal.length) {
+
+        mostrarPerguntaProva();
+
+    } else {
+
+        finalizarProva();
+
+    }
+
+});
+
+
+/* =========================================
+   FINALIZAR PROVA
+========================================= */
+
+function finalizarProva() {
+
+    const nota = Math.round((acertosProva / provaFinal.length) * 100);
+
+    progresso.notaFinal = nota;
+
+    progresso.provaConcluida = true;
+
+    salvarProgresso();
+
+    areaProva.hidden = true;
+
+    if (nota >= 70) {
+
+        areaCertificado.hidden = false;
+
+        document.getElementById("dataConclusao").textContent =
+            "Data de conclusão: " +
+            new Date().toLocaleDateString("pt-BR");
+
+    } else {
+
+        areaProva.hidden = false;
+
+        areaProva.innerHTML = `
+            <div class="conclusao-card">
+                <h2>Avaliação final concluída</h2>
+
+                <p>
+                    Você acertou ${acertosProva} de ${provaFinal.length} questões.
+                </p>
+
+                <h3>Nota: ${nota}%</h3>
+
+                <p>
+                    É necessário alcançar pelo menos 70% para concluir o curso.
+                </p>
+
+                <button id="refazerProva" class="botao-principal">
+                    Refazer avaliação
+                </button>
+            </div>
+        `;
+
+        document.getElementById("refazerProva").addEventListener("click", () => {
+
+            areaProva.innerHTML = `
+                <span class="etiqueta-roxa">AVALIAÇÃO FINAL</span>
+                <h2>Prova final do curso</h2>
+                <p id="numeroProva"></p>
+                <h3 id="perguntaProva"></h3>
+                <div id="alternativasProva"></div>
+                <p id="feedbackProva" class="feedback"></p>
+                <button id="responderProva" class="botao-principal">Responder</button>
+                <button id="proximaProva" class="botao-principal" hidden>Próxima questão →</button>
+            `;
+
+            adicionarEventosProva();
+            iniciarProva();
+
+        });
+
+    }
+
+}
+
+
+/* =========================================
+   RECRIAR EVENTOS DA PROVA
+========================================= */
+
+function adicionarEventosProva() {
+
+    document.getElementById("responderProva").addEventListener("click", responderQuestaoProva);
+
+    document.getElementById("proximaProva").addEventListener("click", avancarQuestaoProva);
+
+}
+
+
+/* =========================================
+   EVENTOS INICIAIS DA PROVA
+========================================= */
+
+function responderQuestaoProva() {
+
+    if (respostaProvaSelecionada === null || provaPerguntaRespondida) return;
+
+    provaPerguntaRespondida = true;
+
+    const pergunta = provaFinal[provaAtual];
+
+    const correta = respostaProvaSelecionada === pergunta.correta;
+
+    if (correta) {
+        acertosProva++;
+
+        document.getElementById("feedbackProva").textContent =
+            "✓ Resposta correta!";
+
+        document.getElementById("feedbackProva").style.color = "#21864b";
+
+    } else {
+
+        document.getElementById("feedbackProva").textContent =
+            "✗ Resposta incorreta. Correta: " +
+            pergunta.alternativas[pergunta.correta];
+
+        document.getElementById("feedbackProva").style.color = "#c0392b";
+
+    }
+
+    document.getElementById("responderProva").hidden = true;
+    document.getElementById("proximaProva").hidden = false;
+
+}
+
+function avancarQuestaoProva() {
+
+    provaAtual++;
+
+    if (provaAtual < provaFinal.length) {
+        mostrarPerguntaProva();
+    } else {
+        finalizarProva();
+    }
+
+}
+
+
+/* =========================================
+   IMPRESSÃO DO CERTIFICADO
+========================================= */
+
+document.getElementById("imprimirCertificado").addEventListener("click", () => {
     window.print();
-}
+});
 
 
-/* =====================================
-   ATUALIZAR CONCLUSÃO DO CURSO
-===================================== */
+/* =========================================
+   INICIALIZAÇÃO DO CURSO
+========================================= */
 
-function atualizarConclusaoCurso() {
-
-    if (cursoConcluido()) {
-
-        conclusaoCurso.hidden = false;
-
-        areaEstudo.hidden = true;
-        areaProva.hidden = true;
-
-        iniciarProva.hidden = false;
-
-        if (progresso.provaAprovada) {
-
-            areaCertificado.hidden = false;
-
-        } else {
-
-            areaCertificado.hidden = true;
-        }
-
-    } else {
-
-        conclusaoCurso.hidden = true;
-    }
-}
-
-
-/* =====================================
-   EVENTOS DOS BOTÕES
-===================================== */
-
-// Verificar resposta da etapa
-concluirEtapa.onclick = verificarEtapa;
-
-// Corrigir quiz do módulo
-corrigirQuiz.onclick = corrigirQuizModulo;
-
-// Voltar para a lista de módulos
-voltarModulos.onclick = voltarParaModulos;
-
-// Iniciar prova final
-iniciarProva.onclick = mostrarProvaFinal;
-
-// Corrigir prova final
-corrigirProva.onclick = corrigirProvaFinal;
-
-// Gerar certificado
-gerarCertificado.onclick = gerarCertificadoCurso;
-
-
-/* =====================================
-   INICIAR O CURSO
-===================================== */
-
-function iniciarAplicacao() {
-
-    // Atualizar os módulos e o progresso
-    atualizarModulos();
-
-    atualizarProgresso();
-
-    // Verificar se o curso já foi concluído
-    if (cursoConcluido()) {
-
-        atualizarConclusaoCurso();
-
-    } else {
-
-        areaEstudo.hidden = true;
-        quizModulo.hidden = true;
-        conclusaoCurso.hidden = true;
-    }
-}
-
-// Executar quando a página carregar
-iniciarAplicacao();
+mostrarModulos();
+atualizarProgresso();

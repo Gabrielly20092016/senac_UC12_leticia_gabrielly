@@ -1,0 +1,1147 @@
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --roxo: #3B216B;
+    --roxo-hover: #523486;
+    --roxo-claro: #EEE8F7;
+    --fundo: #F8F6FB;
+    --branco: #FFFFFF;
+    --texto: #292333;
+    --cinza: #77717F;
+    --borda: #E7E1EF;
+    --amarelo: #F5C842;
+    --amarelo-claro: #FFF3C9;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.header {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: var(--branco);
+    border-bottom: 3px solid var(--amarelo);
+
+    position: relative;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+.senac {
+    color: var(--roxo);
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.mark {
+    color: var(--amarelo);
+}
+
+.brand i {
+    width: 1px;
+    height: 30px;
+    background: var(--borda);
+}
+
+.garoto {
+    color: #4C5360;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav a {
+    color: #64606B;
+    font-size: 13px;
+    font-weight: 500;
+    transition: .25s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--roxo);
+}
+
+.nav a.active {
+    font-weight: 700;
+}
+
+.top-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    background: var(--roxo);
+    color: var(--branco);
+
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: .25s ease;
+    white-space: nowrap;
+}
+
+.top-button:hover {
+    background: var(--roxo-hover);
+    transform: translateY(-2px);
+}
+
+.top-button span,
+.main-button span,
+.secondary-button span,
+.cta-button span {
+    font-size: 17px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+/* ========================================
+   APRESENTAÇÃO - HERO
+======================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 530px;
+    padding: 95px 9%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    overflow: hidden;
+
+    background: var(--roxo);
+    color: var(--branco);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    padding: 9px 16px;
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 30px;
+
+    color: var(--amarelo);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    margin-bottom: 23px;
+
+    font-size: clamp(34px, 4vw, 51px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero h1 em {
+    display: block;
+    margin-top: 8px;
+
+    color: var(--amarelo);
+    font-style: normal;
+}
+
+.hero-content > p {
+    max-width: 540px;
+    margin-bottom: 30px;
+
+    color: #E5DDED;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 25px;
+
+    background: var(--amarelo);
+    color: var(--roxo);
+
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: .25s ease;
+}
+
+.main-button:hover {
+    background: #FFDA69;
+    transform: translateY(-3px);
+}
+
+/* Card do hero */
+
+.hero-card {
+    position: relative;
+    z-index: 2;
+
+    width: 340px;
+    min-width: 290px;
+
+    padding: 38px 32px;
+
+    background: var(--branco);
+    color: var(--roxo);
+
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--amarelo-claro);
+    color: var(--roxo);
+
+    border-radius: 12px;
+    font-size: 27px;
+}
+
+.hero-card > span {
+    color: var(--cinza);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero-card h2 {
+    margin: 17px 0 25px;
+
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+.card-line {
+    width: 55px;
+    height: 4px;
+    margin-bottom: 20px;
+
+    background: var(--amarelo);
+    border-radius: 5px;
+}
+
+.hero-card p {
+    color: var(--cinza);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.hero-decoration {
+    position: absolute;
+    top: -150px;
+    right: 10%;
+
+    width: 420px;
+    height: 420px;
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 50%;
+}
+
+.yellow-circle {
+    position: absolute;
+    right: -100px;
+    bottom: -180px;
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(245,200,66,.12);
+    border-radius: 50%;
+}
+
+/* ========================================
+   SEÇÕES GERAIS
+======================================== */
+
+.section {
+    padding: 90px 9%;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    color: #9774C4;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-heading h2,
+.importance-text h2,
+.development-content h2 {
+    margin-bottom: 20px;
+
+    color: var(--roxo);
+    font-size: clamp(27px, 3vw, 37px);
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.section-heading h2 span,
+.importance-text h2 span,
+.development-content h2 span {
+    color: #8B68B5;
+}
+
+.section-heading > p {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   SOBRE A PARCERIA
+======================================== */
+
+.partnership {
+    background: var(--fundo);
+}
+
+.partners-grid {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 25px;
+}
+
+.partner-card {
+    min-height: 280px;
+    padding: 35px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+
+    box-shadow: 0 5px 18px rgba(40,25,70,.04);
+
+    transition: .3s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(59,33,107,.10);
+    border-color: var(--amarelo);
+}
+
+.partner-symbol {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--roxo);
+    color: var(--branco);
+
+    border-radius: 10px;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.garoto-card .partner-symbol {
+    background: var(--amarelo);
+    color: var(--roxo);
+}
+
+.partner-card h3 {
+    margin-bottom: 15px;
+    color: var(--roxo);
+    font-size: 20px;
+}
+
+.partner-card p {
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.plus-symbol {
+    color: var(--amarelo);
+    font-size: 35px;
+    font-weight: 800;
+}
+
+/* ========================================
+   IMPORTÂNCIA
+======================================== */
+
+.importance {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+
+    background: var(--branco);
+}
+
+.importance-text > p {
+    margin-bottom: 17px;
+
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 18px;
+    padding: 14px 23px;
+
+    background: var(--roxo);
+    color: var(--branco);
+
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: .25s ease;
+}
+
+.secondary-button:hover {
+    background: var(--roxo-hover);
+    transform: translateY(-3px);
+}
+
+/* Visual */
+
+.importance-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.visual-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+    min-height: 330px;
+
+    padding: 45px 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: var(--roxo);
+    color: var(--branco);
+
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(59,33,107,.15);
+}
+
+.visual-star {
+    margin-bottom: 20px;
+    color: var(--amarelo);
+    font-size: 35px;
+}
+
+.visual-box > strong {
+    margin-bottom: 15px;
+
+    color: var(--amarelo);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.visual-box h3 {
+    max-width: 330px;
+    font-size: 30px;
+    line-height: 1.4;
+}
+
+.visual-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 40px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.visual-bottom span {
+    color: #E5DDED;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   BENEFÍCIOS
+======================================== */
+
+.benefits {
+    background: var(--fundo);
+}
+
+.section-heading.center {
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.benefit-card {
+    min-height: 230px;
+    padding: 28px 23px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+
+    transition: .3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--amarelo);
+    box-shadow: 0 12px 28px rgba(59,33,107,.08);
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--amarelo-claro);
+    color: var(--roxo);
+
+    border-radius: 11px;
+    font-size: 25px;
+}
+
+.benefit-card h3 {
+    margin-bottom: 12px;
+    color: var(--roxo);
+    font-size: 16px;
+}
+
+.benefit-card p {
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   DESENVOLVIMENTO
+======================================== */
+
+.development {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+
+    background: var(--branco);
+}
+
+.development-content > p {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.development-points {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.point {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 22px;
+
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+
+    transition: .25s ease;
+}
+
+.point:hover {
+    border-color: var(--amarelo);
+    transform: translateX(5px);
+}
+
+.point > span {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--roxo);
+    color: var(--amarelo);
+
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.point h3 {
+    margin-bottom: 7px;
+    color: var(--roxo);
+    font-size: 15px;
+}
+
+.point p {
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   CHAMADA FINAL
+======================================== */
+
+.final-cta {
+    position: relative;
+
+    padding: 85px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    overflow: hidden;
+
+    background: var(--roxo);
+    color: var(--branco);
+}
+
+.final-cta > span {
+    margin-bottom: 20px;
+
+    color: var(--amarelo);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.final-cta h2 {
+    position: relative;
+    z-index: 2;
+
+    max-width: 750px;
+    margin-bottom: 20px;
+
+    font-size: clamp(27px, 3.5vw, 39px);
+    line-height: 1.35;
+}
+
+.final-cta > p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 570px;
+    margin-bottom: 30px;
+
+    color: #E5DDED;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.cta-button {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 27px;
+
+    background: var(--amarelo);
+    color: var(--roxo);
+
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 800;
+
+    transition: .25s ease;
+}
+
+.cta-button:hover {
+    background: #FFDA69;
+    transform: translateY(-3px);
+}
+
+.cta-decoration {
+    position: absolute;
+    right: -100px;
+    bottom: -220px;
+
+    width: 450px;
+    height: 450px;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.footer {
+    padding: 35px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background: #29164D;
+    color: var(--branco);
+}
+
+.footer-brands {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.footer-brands strong {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.footer-brands span {
+    color: var(--amarelo);
+    font-size: 20px;
+}
+
+.footer > p {
+    margin-bottom: 18px;
+
+    color: #D9D1E4;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.footer > a {
+    color: var(--amarelo);
+    font-size: 12px;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.footer > a:hover {
+    color: var(--branco);
+}
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 18px 4%;
+    }
+
+    .nav {
+        gap: 17px;
+    }
+
+    .hero {
+        padding: 75px 6%;
+        gap: 35px;
+    }
+
+    .hero-card {
+        width: 300px;
+        min-width: 270px;
+    }
+
+    .section {
+        padding: 75px 6%;
+    }
+
+    .importance,
+    .development {
+        gap: 40px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        min-height: 75px;
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .senac {
+        font-size: 23px;
+    }
+
+    .garoto {
+        font-size: 21px;
+    }
+
+    /* Menu */
+
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        background: var(--roxo-claro);
+        border: none;
+        border-radius: 7px;
+    }
+
+    .menu-btn b {
+        width: 20px;
+        height: 2px;
+        display: block;
+
+        background: var(--roxo);
+        border-radius: 5px;
+    }
+
+    .nav {
+        order: 4;
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 10px 0;
+
+        background: var(--branco);
+        border-top: 1px solid var(--borda);
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 13px 8px;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .top-button {
+        padding: 11px 15px;
+        font-size: 11px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        padding: 65px 7%;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 45px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-content > p {
+        font-size: 13px;
+    }
+
+    .hero-card {
+        width: 100%;
+        min-width: 0;
+        padding: 30px;
+    }
+
+    .hero-card h2 {
+        font-size: 23px;
+    }
+
+    /* Seções */
+
+    .section {
+        padding: 65px 7%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2,
+    .importance-text h2,
+    .development-content h2 {
+        font-size: 27px;
+    }
+
+    /* Parceria */
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .partner-card {
+        min-height: auto;
+        padding: 28px;
+    }
+
+    .plus-symbol {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    /* Importância */
+
+    .importance,
+    .development {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .visual-box {
+        min-height: 300px;
+    }
+
+    .visual-box h3 {
+        font-size: 26px;
+    }
+
+    /* Benefícios */
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .benefit-card {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    /* Desenvolvimento */
+
+    .point {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    /* Chamada final */
+
+    .final-cta {
+        padding: 65px 7%;
+    }
+
+    .final-cta h2 {
+        font-size: 28px;
+    }
+
+    .final-cta > p {
+        font-size: 13px;
+    }
+
+    /* Rodapé */
+
+    .footer {
+        padding: 30px 18px;
+    }
+}
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 380px) {
+
+    .header {
+        gap: 10px;
+    }
+
+    .senac {
+        font-size: 20px;
+    }
+
+    .garoto {
+        font-size: 18px;
+    }
+
+    .top-button {
+        padding: 10px 12px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero-card {
+        padding: 24px;
+    }
+
+    .section-heading h2,
+    .importance-text h2,
+    .development-content h2 {
+        font-size: 24px;
+    }
+
+    .visual-box h3 {
+        font-size: 23px;
+    }
+
+    .visual-bottom {
+        gap: 10px;
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--amarelo);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}

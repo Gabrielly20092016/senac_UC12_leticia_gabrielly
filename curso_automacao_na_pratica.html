@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Curso online Automação na Prática. Aprenda os fundamentos da automação, sensores, atuadores e sistemas de controle.">
+    <meta name="description" content="Curso online Automação na Prática. Aprenda sobre automação, sensores, atuadores e sistemas de controle.">
 
     <title>Automação na Prática</title>
 
@@ -13,49 +13,34 @@
 <body>
 
 <header class="cabecalho">
+    <a href="cursos_disponiveis.html" class="voltar">← Voltar aos cursos</a>
 
-    <a href="cursos_disponiveis.html" class="voltar">
-        ← Voltar aos cursos
-    </a>
+    <img src="IMG/logo_senac.png" alt="Senac" class="logo">
 
-    <a href="#inicio" class="marca" aria-label="Ir para o início do curso">
-        <img
-            src="../senac_UC12_leticia_gabrielly/img/logotipo_senac_garoto.png"
-            alt="Logo Senac e Garoto"
-            class="logo"
-        >
-    </a>
-
-    <nav aria-label="Navegação principal">
+    <nav>
         <a href="#inicio">Início</a>
-        <a href="#modulos">Conteúdo do curso</a>
+        <a href="#conteudo">Conteúdo do curso</a>
         <a href="#progresso">Meu progresso</a>
     </nav>
-
 </header>
 
 <main>
 
-    <!-- APRESENTAÇÃO DO CURSO -->
-
-    <section class="apresentacao" id="inicio">
-
-        <div class="apresentacao-conteudo">
-
+    <section class="hero" id="inicio">
+        <div class="hero-conteudo">
             <span class="etiqueta">CURSO ONLINE</span>
 
-            <p class="sobretitulo">APRENDA NO SEU RITMO</p>
+            <p class="subtitulo">APRENDA NO SEU RITMO</p>
 
             <h1>Automação na Prática</h1>
 
-            <p class="descricao-apresentacao">
-                Aprenda os conceitos fundamentais da automação, conheça sensores,
-                atuadores, sistemas de controle e suas aplicações no dia a dia
-                das indústrias.
+            <p class="descricao">
+                Aprenda os conceitos fundamentais da automação,
+                conheça sensores, atuadores, sistemas de controle
+                e suas aplicações no dia a dia das indústrias.
             </p>
 
-            <div class="informacoes-curso">
-
+            <div class="informacoes">
                 <div>
                     <strong>05</strong>
                     <span>Módulos</span>
@@ -70,427 +55,196 @@
                     <strong>100%</strong>
                     <span>Online</span>
                 </div>
-
             </div>
 
-            <a href="#modulos" class="link-iniciar">
-                Ver conteúdo do curso
-                <span aria-hidden="true">↓</span>
+            <a href="#conteudo" class="botao-hero">
+                Ver conteúdo do curso ↓
             </a>
-
         </div>
-
     </section>
 
+    <section class="progresso-container" id="progresso">
+        <div class="progresso-card">
 
-    <!-- PROGRESSO DO ALUNO -->
+            <div class="progresso-topo">
+                <div>
+                    <span class="etiqueta-roxa">ACOMPANHAMENTO</span>
+                    <h2>Meu progresso</h2>
+                    <p>Acompanhe seu desenvolvimento durante o curso.</p>
+                </div>
 
-    <section class="secao progresso" id="progresso">
-
-        <div class="cabecalho-secao">
-
-            <div>
-
-                <span class="etiqueta etiqueta-clara">
-                    ACOMPANHAMENTO
-                </span>
-
-                <h2>Meu progresso</h2>
-
-                <p>
-                    Acompanhe seu desenvolvimento durante o curso.
-                </p>
-
+                <div class="icone-progresso">✓</div>
             </div>
 
-            <div class="icone-progresso" aria-hidden="true">
-                ✓
+            <div class="progresso-info">
+                <span>Progresso geral</span>
+                <strong id="porcentagem">0%</strong>
             </div>
 
-        </div>
-
-        <div class="progresso-info">
-
-            <span>Progresso geral</span>
-
-            <strong id="porcentagemGeral">0%</strong>
-
-        </div>
-
-        <div
-            class="barra-fundo"
-            role="progressbar"
-            aria-label="Progresso geral do curso"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow="0"
-            id="barraGeralAcessivel"
-        >
-
-            <div id="barraGeral" class="barra-preenchida"></div>
-
-        </div>
-
-        <div class="resumo-progresso">
-
-            <div class="item-resumo">
-
-                <strong id="modulosConcluidos">0</strong>
-
-                <span>Módulos concluídos</span>
-
+            <div class="barra-fundo">
+                <div class="barra-preenchida" id="barraProgresso"></div>
             </div>
 
-            <div class="item-resumo">
+            <div class="numeros-progresso">
+                <div>
+                    <strong id="modulosConcluidos">0</strong>
+                    <span>Módulos concluídos</span>
+                </div>
 
-                <strong id="etapasConcluidas">0</strong>
-
-                <span>Etapas concluídas</span>
-
+                <div>
+                    <strong id="etapasConcluidas">0</strong>
+                    <span>Etapas concluídas</span>
+                </div>
             </div>
 
         </div>
-
     </section>
 
+    <section class="conteudo-curso" id="conteudo">
 
-    <!-- CONTEÚDO DOS MÓDULOS -->
-
-    <section class="secao secao-modulos" id="modulos">
-
-        <div class="titulo-principal">
-
-            <span class="etiqueta etiqueta-clara">
-                TRILHA DE APRENDIZAGEM
-            </span>
-
+        <div class="titulo-secao">
+            <span class="etiqueta-roxa">TRILHA DE APRENDIZAGEM</span>
             <h2>Conteúdo do curso</h2>
-
-            <p>
-                Estude cada etapa e conclua o quiz para liberar o próximo módulo.
-            </p>
-
+            <p>Estude cada etapa e conclua o quiz para liberar o próximo módulo.</p>
         </div>
 
-        <!-- Os módulos serão carregados pelo JavaScript -->
-
-        <div
-            id="listaModulos"
-            class="lista-modulos"
-            aria-live="polite"
-        ></div>
-
+        <!-- OS MÓDULOS SERÃO INSERIDOS PELO JAVASCRIPT -->
+        <div id="listaModulos" class="lista-modulos"></div>
 
         <!-- ÁREA DE ESTUDO -->
+        <section id="areaEstudo" class="area-estudo" hidden>
 
-        <section
-            id="areaEstudo"
-            class="area-estudo"
-            hidden
-            aria-live="polite"
-        >
-
-            <button
-                id="voltarModulos"
-                class="botao botao-secundario"
-                type="button"
-            >
+            <button id="voltarModulos" class="botao-voltar">
                 ← Voltar aos módulos
             </button>
 
+            <div class="estudo-card">
 
-            <div class="cabecalho-aula">
+                <div class="estudo-cabecalho">
+                    <span id="numeroModulo"></span>
+                    <h2 id="tituloModulo"></h2>
+                    <p id="descricaoModulo"></p>
+                </div>
 
-                <p
-                    id="identificacaoModulo"
-                    class="identificacao-modulo"
-                ></p>
+                <div class="etapas-indicador" id="indicadorEtapas"></div>
 
-                <h2 id="nomeEtapa"></h2>
+                <div id="conteudoEtapa" class="conteudo-etapa">
 
-            </div>
+                    <span id="numeroEtapa" class="etiqueta-roxa"></span>
 
+                    <h3 id="tituloEtapa"></h3>
 
-            <!-- PROGRESSO DA ETAPA -->
+                    <p id="subtituloEtapa"></p>
 
-            <div class="progresso-aula">
-
-                <div class="progresso-info">
-
-                    <span id="contadorEtapa"></span>
-
-                    <strong id="porcentagemEtapa"></strong>
+                    <div id="textoEtapa" class="texto-etapa"></div>
 
                 </div>
 
-                <div class="barra-fundo">
+                <div class="navegacao-etapas">
+                    <button id="etapaAnterior" class="botao-secundario">
+                        ← Anterior
+                    </button>
 
-                    <div
-                        id="barraEtapa"
-                        class="barra-preenchida"
-                    ></div>
-
+                    <button id="proximaEtapa" class="botao-principal">
+                        Próxima etapa →
+                    </button>
                 </div>
 
             </div>
-
-
-            <!-- CONTEÚDO DA AULA -->
-
-            <article
-                id="conteudoEtapa"
-                class="conteudo-etapa"
-            ></article>
-
-
-            <!-- PERGUNTA DA ETAPA -->
-
-            <section
-                id="perguntaEtapa"
-                class="pergunta"
-                hidden
-            >
-
-                <div class="titulo-atividade">
-
-                    <span class="numero-atividade">01</span>
-
-                    <div>
-
-                        <h3>Vamos praticar?</h3>
-
-                        <p>
-                            Escolha a alternativa correta para concluir esta etapa.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <p
-                    id="textoPerguntaEtapa"
-                    class="texto-pergunta"
-                ></p>
-
-                <div
-                    id="opcoesPerguntaEtapa"
-                    class="opcoes"
-                ></div>
-
-                <p
-                    id="resultadoEtapa"
-                    class="resultado"
-                    aria-live="polite"
-                ></p>
-
-                <button
-                    id="concluirEtapa"
-                    class="botao"
-                    type="button"
-                    disabled
-                >
-                    Concluir etapa
-                </button>
-
-            </section>
-
 
             <!-- QUIZ DO MÓDULO -->
+            <div id="quizModulo" class="quiz-card" hidden>
 
-            <section
-                id="quizModulo"
-                class="quiz"
-                hidden
-            >
+                <span class="etiqueta-roxa">AVALIAÇÃO DO MÓDULO</span>
 
-                <div class="titulo-atividade">
+                <h2>Teste seus conhecimentos!</h2>
 
-                    <span class="numero-atividade">02</span>
+                <p id="numeroPergunta"></p>
 
-                    <div>
+                <h3 id="perguntaEtapa"></h3>
 
-                        <h3>Quiz do módulo</h3>
+                <div id="alternativasQuiz"></div>
 
-                        <p>
-                            Responda às questões para concluir este módulo.
-                            Você precisa acertar pelo menos 75%.
-                        </p>
+                <p id="feedbackQuiz" class="feedback"></p>
 
-                    </div>
-
-                </div>
-
-                <div id="questoesQuiz"></div>
-
-                <button
-                    id="corrigirQuiz"
-                    class="botao"
-                    type="button"
-                >
-                    Enviar respostas
+                <button id="responderQuiz" class="botao-principal">
+                    Responder
                 </button>
 
-                <p
-                    id="resultadoQuiz"
-                    class="resultado"
-                    aria-live="polite"
-                ></p>
+                <button id="proximaPergunta" class="botao-principal" hidden>
+                    Próxima pergunta →
+                </button>
 
-            </section>
+            </div>
 
         </section>
 
-    </section>
+        <!-- CONCLUSÃO -->
+        <section id="conclusaoCurso" class="conclusao-card" hidden>
+            <div class="icone-conclusao">✓</div>
+            <h2>Módulo concluído!</h2>
+            <p>Parabéns! Você concluiu todas as etapas e o quiz deste módulo.</p>
+            <button id="continuarCurso" class="botao-principal">
+                Continuar curso →
+            </button>
+        </section>
 
+        <!-- AVALIAÇÃO FINAL -->
+        <section id="areaProva" class="quiz-card" hidden>
 
-    <!-- CONCLUSÃO DO CURSO E AVALIAÇÃO FINAL -->
+            <span class="etiqueta-roxa">AVALIAÇÃO FINAL</span>
 
-    <section
-        id="conclusaoCurso"
-        class="secao conclusao"
-        hidden
-    >
+            <h2>Prova final do curso</h2>
 
-        <span class="etiqueta etiqueta-clara">
-            ETAPA FINAL
-        </span>
+            <p id="numeroProva"></p>
 
-        <h2>Você chegou à avaliação final!</h2>
+            <h3 id="perguntaProva"></h3>
 
-        <p>
-            Todos os módulos foram concluídos.
-            Agora responda à avaliação final para finalizar o curso.
-        </p>
+            <div id="alternativasProva"></div>
 
-        <button
-            id="iniciarProva"
-            class="botao"
-            type="button"
-        >
-            Iniciar avaliação
-        </button>
+            <p id="feedbackProva" class="feedback"></p>
 
-
-        <!-- ÁREA DA PROVA -->
-
-        <section
-            id="areaProva"
-            class="quiz"
-            hidden
-        >
-
-            <div id="questoesProva"></div>
-
-            <button
-                id="corrigirProva"
-                class="botao"
-                type="button"
-            >
-                Finalizar avaliação
+            <button id="responderProva" class="botao-principal">
+                Responder
             </button>
 
-            <p
-                id="resultadoProva"
-                class="resultado"
-                aria-live="polite"
-            ></p>
+            <button id="proximaProva" class="botao-principal" hidden>
+                Próxima questão →
+            </button>
 
         </section>
 
+        <!-- CERTIFICADO -->
+        <section id="areaCertificado" class="certificado-card" hidden>
+            <div class="icone-conclusao">✓</div>
 
-        <!-- ÁREA DO CERTIFICADO -->
-
-        <section
-            id="areaCertificado"
-            class="certificado"
-            hidden
-        >
-
-            <h3>Parabéns pela conclusão!</h3>
+            <h2>Parabéns pela conclusão!</h2>
 
             <p>
-                Informe seu nome para preparar o certificado.
+                Você concluiu o curso Automação na Prática.
             </p>
 
-            <label for="nomeCertificado">
-                Nome completo
-            </label>
+            <div class="certificado">
+                <span>SENAC</span>
+                <h2>Certificado de Conclusão</h2>
+                <p>Curso: Automação na Prática</p>
+                <p>Carga horária: 20 horas</p>
+                <p id="dataConclusao"></p>
+            </div>
 
-            <input
-                type="text"
-                id="nomeCertificado"
-                placeholder="Digite seu nome completo"
-                autocomplete="name"
-            >
-
-            <button
-                id="gerarCertificado"
-                class="botao"
-                type="button"
-            >
-                Gerar certificado
-            </button>
-
-        </section>
-
-    </section>
-
-
-    <!-- CERTIFICADO IMPRESSO -->
-
-    <section
-        id="certificadoImpresso"
-        class="certificado-impresso"
-        hidden
-    >
-
-        <div class="moldura-certificado">
-
-            <span class="etiqueta etiqueta-clara">
-                SENAC
-            </span>
-
-            <h1>Certificado de Conclusão</h1>
-
-            <p>Certificamos que</p>
-
-            <h2 id="nomeAlunoImpresso"></h2>
-
-            <p>concluiu com aproveitamento o curso</p>
-
-            <h2>Automação na Prática</h2>
-
-            <p>com carga horária de 20 horas.</p>
-
-            <p class="assinatura">Senac</p>
-
-            <button
-                class="botao botao-imprimir"
-                type="button"
-                onclick="window.print()"
-            >
+            <button id="imprimirCertificado" class="botao-principal">
                 Imprimir certificado
             </button>
-
-        </div>
+        </section>
 
     </section>
 
 </main>
 
-
-<!-- RODAPÉ -->
-
-<footer>
-
-    <p>Automação na Prática</p>
-
-    <span>Curso de aprendizagem online</span>
-
+<footer class="rodape">
+    <strong>Automação na Prática</strong>
+    <p>Curso de aprendizagem online</p>
 </footer>
-
-
-<!-- JAVASCRIPT -->
 
 <script src="js/curso_automacao_na_pratica.js"></script>
 
